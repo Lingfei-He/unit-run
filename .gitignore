@@ -158,3 +158,4 @@ build/
 .vscode/
 .pytest_cache/
 *egg-info/
+*.rst
