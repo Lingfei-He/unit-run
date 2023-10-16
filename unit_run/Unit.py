@@ -1,4 +1,4 @@
-from utils import find_callable_by_name, get_info_dict_from_callable
+from .utils import find_callable_by_name, get_info_dict_from_callable
 import os, shutil, json
 from glob import glob
 
@@ -31,7 +31,7 @@ class Unit:
         for group_name, group in self.param_group_map.items():
             self._save_as_json(os.path.join(save_dir, f'{group_name}.param_group.json'), group)
         if verbose:
-            print(f'{len(self.param_group_map)} groups of paramters saved in {save_dir}')
+            print(f"The information of unit '{self.meta['unit_name']}' (from {self.meta['unit_path']}) saved at {save_dir} with {len(self.param_group_map)} group{'s' if len(self.param_group_map) > 1 else ''} of paramters.")
 
     def set_param_group(self, name, group):
         self.param_group_map[name] = group
@@ -46,7 +46,7 @@ class Unit:
         for path in json_paths:
             unit.set_param_group(os.path.basename(path).replace('.param_group.json', ''), cls._load_from_json(path))
         if verbose:
-            print(f"Find {len(unit.param_group_map)} groups of paramters for '{unit.meta['unit_name']}' unit in {unit.meta['unit_path']}")
+            print(f"Found {len(unit.param_group_map)} groups of paramters for '{unit.meta['unit_name']}' unit in {unit.meta['unit_path']}")
         return unit
 
     def run(self, group_name):
@@ -69,29 +69,6 @@ class Unit:
 
     def __str__(self):
         return json.dumps(self.summary, indent=2)
-    # @classmethod
-    # load_from_dir
-
-# # Create from in-memory data
-# unit_path = 'D:/documents/AcademicDocuments/customed_python_pkgs/unit-run/test.py'
-# unit_name = 'y'
-# unit = Unit(unit_path, unit_name)
-# print(unit)
-
-# # add parameter group
-# unit.set_param_group('test1', [8, 10])
-# unit.set_param_group('test2', {'a': 11, 'b': 11})
-
-# # Save at a directory
-# save_dir = 'D:/documents/AcademicDocuments/customed_python_pkgs/unit-run/test'
-# unit.save(save_dir)
-
-# print(unit.run('test2'))
-
-# Load unit
-# load_dir = 'D:/documents/AcademicDocuments/customed_python_pkgs/unit-run/test'
-# unit = Unit.load_from_dir(load_dir)
-# unit.set_param_group('test4', [66, 11])
-# print(unit)
-# unit.save(load_dir)
-# print(unit.run('test4'))
+    
+    def __contains__(self, group_name):
+        return group_name in self.param_group_map

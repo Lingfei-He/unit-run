@@ -37,19 +37,3 @@ def inspect_callable_infos_by_path(path):
 def find_callable_by_name(path, name):
     result = list(filter(lambda c: c.__name__ == name, inspect_callables_by_path(path)))
     return result[0] if len(result) > 0 else None
-
-
-# if __name__ == '__main__':
-#     path = 'D:/documents/AcademicDocuments/other/pytest-output/simple-test/resources/scripts/python/utils.py'
-#     inspect_callable_infos_by_path(path)
-    # query, data = utils.get_query_and_data()
-    # if query == 'inpect_callable_names':
-    #     utils.return_result([inspect.signature()])
-
-    # utils.return_result({
-    #     'received_query': query,
-    #     'received_data': data
-    # })
-# if __name__ == '__main__':
-#     path = 'D:/documents/AcademicDocuments/other/pytest-output/simple-test/src/python/_inspect.py'
-#     print(inspect_callables_by_path(path)[0](path))

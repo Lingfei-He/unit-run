@@ -9,5 +9,10 @@ setup(
     author='Lingfei He',
     author_email='lingfei@tju.edu.cn',
     license='MIT',
+    entry_points={
+        'console_scripts':[
+            'unit-run = unit_run.cli:main'
+        ]
+    },
     packages=find_packages(),
     zip_safe=False)
