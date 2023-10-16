@@ -153,9 +153,5 @@ cython_debug/
 
 # custom files
 *.sh
-dist/
-build/
 .vscode/
-.pytest_cache/
-*egg-info/
 *.rst
