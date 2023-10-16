@@ -58,13 +58,17 @@ class Unit:
     def unit_info(self):
         return get_info_dict_from_callable(self.unit)
     
-    def __str__(self):
+    @property
+    def summary(self):
         new_meta = self.unit_info
         new_meta['path'] = self.meta['unit_path']
-        return json.dumps({
+        return {
             'meta': self.unit_info,
             'param_group_map': self.param_group_map
-        }, indent=2)
+        }
+
+    def __str__(self):
+        return json.dumps(self.summary, indent=2)
     # @classmethod
     # load_from_dir
 
