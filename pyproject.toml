@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "unit-run"
+version = "0.0.3"
+authors = [
+  { name="Lingfei He", email="lingfei@tju.edu.cn" },
+]
+description = "Easy to store and reperform unit running process."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Lingfei-He/unit-run"
+"Bug Tracker" = "https://github.com/Lingfei-He/unit-run/issues"

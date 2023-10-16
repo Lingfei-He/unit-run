@@ -60,7 +60,7 @@ summary = unit.summary
 
 
 ## To do
-- Support for any code segment and the classes from popular package like `numpy.ndarry`.
+- Support for any code segment and the classes from popular package like `numpy.ndarray`.
 - Support for complete storage for `Unit` (including the target unit object).
 - Maybe create a new buldled file extension named `.unit` to pack all the data files into a single file and provide graphic user interface to get access to it.
 - Support for multiple languages.
