@@ -1,7 +1,10 @@
 # unit-run
+[TOC]
+
 ## Description
 
 This package is used to simply run a unit *(only supports the ``Callable`` object currently)* in Python **without any extra running code**. And it can also save/load all your input parameters as/from a simple json file, so it is easy to run a target unit with auto-input parameters group by give it just a group name.
+
 ## Installation
 ```
 pip install unit-run
@@ -41,7 +44,7 @@ For easy explaination in following usecases, we firstly suppose that we have cre
     # run\cli.py once tests/test.py y -g "[1, 2]"
     # Running the target unit 'y' from tests/test.py...
     # Running complete, time consuming: 0.0 s.
-
+    
     # **********Running Result**********
     # -1
     # **********Running Result**********
@@ -52,7 +55,7 @@ For easy explaination in following usecases, we firstly suppose that we have cre
     unit-run once tests/test.py y --file tests/manual_p_group1.json
     # Running the target unit 'y' from tests/test.py...
     # Running complete, time consuming: 0.0 s.
-
+    
     # **********Running Result**********
     # 9
     # **********Running Result**********
@@ -71,7 +74,7 @@ unit-run create tests/test.py y tests/test -g name1 "[1,2]" name2 "{\"a\": 3, \"
   - View the entire `Unit`
     ```shell
     unit-run view --dir tests/test
-
+    
     #{
     #    "name": "y",
     #    "paramters": [
@@ -92,14 +95,14 @@ unit-run create tests/test.py y tests/test -g name1 "[1,2]" name2 "{\"a\": 3, \"
   - View the target parameter group of `Unit`
     ```shell
     unit-run view --dir tests/test name3
-
+    
     # [10, 1]
     ```
 
 - Inpect the target unit in a raw file by `--raw`
     ```shell
     unit-run view --raw tests/test.py y
-
+    
     # {
     #   "name": "y",
     #   "paramters": [
@@ -141,25 +144,25 @@ unit-run set tests/test -g name2 "[1, 1]" --file-pairs name4 tests/manual_p_grou
 # New parameter group 'name5' added.
 ```
 
-#### Delete named parameter groups or entire `Unit` for a stored `Unit`
+#### Delete named parameter groups or the entire `Unit` for a stored `Unit`
 - Delete parameter groups by names
     ```shell
     unit-run del tests/test name4 name5
-
+    
     # Deleted 2 parameter groups of the unit 'y'.
     ```
 
 - Clear all parameter groups of a `Unit`
     ```shell
     unit-run del tests/test *
-
+    
     # The parameters groups of unit 'y' cleared.
     ```
 
 - Delete the entire `Unit`
     ```shell
     unit-run del tests/test
-
+    
     # The entire unit 'y' was deleted.
     ```
 
