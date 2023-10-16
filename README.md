@@ -131,7 +131,7 @@ unit-run run tests/test name2
 # **********Running Result**********
 ```
 
-#### Set a named parameter group for a stored `Unit`
+#### Set named parameter groups for a stored `Unit`
 ```shell
 unit-run set tests/test -g name2 "[1, 1]" --file-pairs name4 tests/manual_p_group1.json name5 tests/manual_p_group2.json -f # Use '-f' or '-force-overwrite' to overwrite the existing parameter group.
 
