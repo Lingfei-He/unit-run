@@ -1,0 +1,51 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+options:
+  numbered: True
+
+parts:
+  - caption: Installation
+    chapters: 
+      - file: installation/prerequisites
+      - file: installation/package_installation
+  - caption: User Guide
+    chapters:
+      - file: user_guide/CLI_Tool/index
+        sections:
+        - file: user_guide/CLI_Tool/once 
+        - file: user_guide/CLI_Tool/store
+        - file: user_guide/CLI_Tool/run
+        - file: user_guide/CLI_Tool/view
+        - file: user_guide/CLI_Tool/set
+        - file: user_guide/CLI_Tool/del
+  - caption: APIs
+    chapters:
+      - glob: apidocs/unit_run/unit_run.*
+        # sections:
+        #   - file: markdown-notebooks
+  # - caption: User Guide
+  #   chapters:
+  #   - file: user_guide/CLI_Tool/once 
+  #     title: test2
+  #   - file: user_guide/Python_Script/index
+# chapters:
+#   - title: Installation
+#     file: installation/index
+#   - 
+#     title: test
+#     # file: user_guide/index
+#     sections: 
+#       - file: user_guide/CLI_Tool/index
+#         sections:
+#           - file: user_guide/CLI_Tool/once 
+#       - file: user_guide/Python_Script/index
+#   # - file: notebooks
+#   - file: apidocs/index
+#     sections:
+#       - file: markdown-notebooks
+      
+        
+

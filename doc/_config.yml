@@ -1,0 +1,79 @@
+# Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
+
+title: unit-run
+author: Lingfei He
+copyright: "2023"
+
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: off
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: book.tex
+
+# Add a bibtex file so that we can create citations
+bibtex_bibfiles:
+  - references.bib
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/Lingfei-He/unit-run  # Online location of your book
+  path_to_book: doc  # Optional path to your book, relative to the repository root
+  branch: master  # Which branch of the repository should be used when creating links (optional)
+
+# Add GitHub buttons to your book
+# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+html:
+  use_issues_button: true
+  use_repository_button: true
+  use_issues_button: true
+
+sphinx:
+  extra_extensions:
+   - sphinx.ext.napoleon
+   - sphinx.ext.doctest
+   - sphinx.ext.intersphinx
+   - sphinx.ext.todo
+   - sphinx.ext.coverage
+   - sphinx.ext.mathjax
+   - sphinx.ext.duration
+   - sphinx.ext.viewcode
+   - autodoc2
+   - sphinxcontrib.jquery
+
+
+  config:
+    # html_theme: pydata_sphinx_theme
+    html_show_sourcelink: False
+    numfig: false
+    # html_show_sphinx: False
+    html_theme_options:
+      show_nav_level: 3
+      collapse_navigation: false
+      footer_end:
+        - last-updated
+      icon_links: 
+        - 
+          name: GitHub
+          url: https://github.com/Lingfei-He/unit-run
+          icon: fa-brands fa-github
+          type: fontawesome
+        - 
+          name: PyPI
+          url: https://pypi.org/project/unit-run/
+          icon: fa-brands fa-python
+          type: fontawesome
+        - 
+          name: Forum
+          url: https://github.com/Lingfei-He/unit-run/issues
+          icon: fa-solid fa-comments
+          type: fontawesome
+    autodoc2_packages:
+      - ../src/unit_run
+    autodoc2_render_plugin : myst
+    myst_enable_extensions: 
+      - fieldlist

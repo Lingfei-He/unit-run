@@ -1,0 +1,1105 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>unit_run.components &#8212; unit-run</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/all.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'apidocs/unit_run/unit_run.components';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="unit_run.utils" href="unit_run.utils.html" />
+    <link rel="prev" title="unit_run.cli" href="unit_run.cli.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">unit-run</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Lingfei-He/unit-run" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/unit-run/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Lingfei-He/unit-run/issues" title="Forum" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-solid fa-comments fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Forum</span></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../installation/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation/package_installation.html">Package Installation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../user_guide/CLI_Tool/index.html">CLI Tool</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../user_guide/CLI_Tool/once.html">One-time unit running</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_guide/CLI_Tool/store.html">Create a stored <code class="docutils literal notranslate"><span class="pre">Unit</span></code> for the following runs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_guide/CLI_Tool/run.html">Run a stored <code class="docutils literal notranslate"><span class="pre">Unit</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_guide/CLI_Tool/view.html">Inspect or view <code class="docutils literal notranslate"><span class="pre">Unit</span></code> information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_guide/CLI_Tool/set.html">Set named parameter groups for a stored <code class="docutils literal notranslate"><span class="pre">Unit</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_guide/CLI_Tool/del.html">Delete named parameter groups or the entire <code class="docutils literal notranslate"><span class="pre">Unit</span></code> for a stored Unit</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">APIs</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="unit_run.cli.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unit_run.cli</span></code></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unit_run.components</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="unit_run.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unit_run.utils</span></code></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/apidocs/unit_run/unit_run.components.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>unit_run.components</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api">API</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base"><code class="docutils literal notranslate"><span class="pre">Base</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base.PATH_TYPE"><code class="docutils literal notranslate"><span class="pre">Base.PATH_TYPE</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base.check_data"><code class="docutils literal notranslate"><span class="pre">Base.check_data()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base.validate_data"><code class="docutils literal notranslate"><span class="pre">Base.validate_data()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base.check"><code class="docutils literal notranslate"><span class="pre">Base.check()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base.valid"><code class="docutils literal notranslate"><span class="pre">Base.valid</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base._check_file_name"><code class="docutils literal notranslate"><span class="pre">Base._check_file_name()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base._check_path_to_load"><code class="docutils literal notranslate"><span class="pre">Base._check_path_to_load()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base._check_before_load"><code class="docutils literal notranslate"><span class="pre">Base._check_before_load()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base._load_raw_data"><code class="docutils literal notranslate"><span class="pre">Base._load_raw_data()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base._check_after_load"><code class="docutils literal notranslate"><span class="pre">Base._check_after_load()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base.is_path_loadable"><code class="docutils literal notranslate"><span class="pre">Base.is_path_loadable()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base._create_obj_by_raw_data"><code class="docutils literal notranslate"><span class="pre">Base._create_obj_by_raw_data()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base._update"><code class="docutils literal notranslate"><span class="pre">Base._update()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base.load_from_disk"><code class="docutils literal notranslate"><span class="pre">Base.load_from_disk()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base.valid_path_exists"><code class="docutils literal notranslate"><span class="pre">Base.valid_path_exists()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base._check_before_save"><code class="docutils literal notranslate"><span class="pre">Base._check_before_save()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base._save"><code class="docutils literal notranslate"><span class="pre">Base._save()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base._after_save"><code class="docutils literal notranslate"><span class="pre">Base._after_save()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base._exist_handler"><code class="docutils literal notranslate"><span class="pre">Base._exist_handler()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base.save_to_disk"><code class="docutils literal notranslate"><span class="pre">Base.save_to_disk()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base.to_dict"><code class="docutils literal notranslate"><span class="pre">Base.to_dict()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base.to_info_dict"><code class="docutils literal notranslate"><span class="pre">Base.to_info_dict()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base.__str__"><code class="docutils literal notranslate"><span class="pre">Base.__str__()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Meta"><code class="docutils literal notranslate"><span class="pre">Meta</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Meta.FILE_NAME"><code class="docutils literal notranslate"><span class="pre">Meta.FILE_NAME</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Meta.PATH_TYPE"><code class="docutils literal notranslate"><span class="pre">Meta.PATH_TYPE</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Meta.check_data"><code class="docutils literal notranslate"><span class="pre">Meta.check_data()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Meta.get_path_by_dir"><code class="docutils literal notranslate"><span class="pre">Meta.get_path_by_dir()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Meta.property"><code class="docutils literal notranslate"><span class="pre">Meta.property()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Meta._check_file_name"><code class="docutils literal notranslate"><span class="pre">Meta._check_file_name()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Meta._load_raw_data"><code class="docutils literal notranslate"><span class="pre">Meta._load_raw_data()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Meta._check_after_load"><code class="docutils literal notranslate"><span class="pre">Meta._check_after_load()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Meta._create_obj_by_raw_data"><code class="docutils literal notranslate"><span class="pre">Meta._create_obj_by_raw_data()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Meta._save"><code class="docutils literal notranslate"><span class="pre">Meta._save()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.ParameterGroup"><code class="docutils literal notranslate"><span class="pre">ParameterGroup</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.ParameterGroup.FILE_SUFFIX"><code class="docutils literal notranslate"><span class="pre">ParameterGroup.FILE_SUFFIX</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.ParameterGroup.PATH_TYPE"><code class="docutils literal notranslate"><span class="pre">ParameterGroup.PATH_TYPE</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.ParameterGroup.check_data"><code class="docutils literal notranslate"><span class="pre">ParameterGroup.check_data()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.ParameterGroup.check"><code class="docutils literal notranslate"><span class="pre">ParameterGroup.check()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.ParameterGroup.get_file_name"><code class="docutils literal notranslate"><span class="pre">ParameterGroup.get_file_name()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.ParameterGroup.get_path_by_dir_and_name"><code class="docutils literal notranslate"><span class="pre">ParameterGroup.get_path_by_dir_and_name()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.ParameterGroup.get_name_from_path"><code class="docutils literal notranslate"><span class="pre">ParameterGroup.get_name_from_path()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.ParameterGroup._check_file_name"><code class="docutils literal notranslate"><span class="pre">ParameterGroup._check_file_name()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.ParameterGroup._load_raw_data"><code class="docutils literal notranslate"><span class="pre">ParameterGroup._load_raw_data()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.ParameterGroup.load_by_dir_and_name"><code class="docutils literal notranslate"><span class="pre">ParameterGroup.load_by_dir_and_name()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.ParameterGroup._save"><code class="docutils literal notranslate"><span class="pre">ParameterGroup._save()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.ParameterGroup.save_by_dir_and_name"><code class="docutils literal notranslate"><span class="pre">ParameterGroup.save_by_dir_and_name()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit"><code class="docutils literal notranslate"><span class="pre">Unit</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit.PATH_TYPE"><code class="docutils literal notranslate"><span class="pre">Unit.PATH_TYPE</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit.src_path"><code class="docutils literal notranslate"><span class="pre">Unit.src_path()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit.src_name"><code class="docutils literal notranslate"><span class="pre">Unit.src_name()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit.check_data"><code class="docutils literal notranslate"><span class="pre">Unit.check_data()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit.check_src_obj"><code class="docutils literal notranslate"><span class="pre">Unit.check_src_obj()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit.src_obj_valid"><code class="docutils literal notranslate"><span class="pre">Unit.src_obj_valid</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit.src_obj"><code class="docutils literal notranslate"><span class="pre">Unit.src_obj</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit._check_path_to_load"><code class="docutils literal notranslate"><span class="pre">Unit._check_path_to_load()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit._check_after_load"><code class="docutils literal notranslate"><span class="pre">Unit._check_after_load()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit.get_param_group_pairs_from_dir"><code class="docutils literal notranslate"><span class="pre">Unit.get_param_group_pairs_from_dir()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit._load_raw_data"><code class="docutils literal notranslate"><span class="pre">Unit._load_raw_data()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit._create_obj_by_raw_data"><code class="docutils literal notranslate"><span class="pre">Unit._create_obj_by_raw_data()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit._check_before_save"><code class="docutils literal notranslate"><span class="pre">Unit._check_before_save()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit._save"><code class="docutils literal notranslate"><span class="pre">Unit._save()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit.set_param_group"><code class="docutils literal notranslate"><span class="pre">Unit.set_param_group()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit.set_param_group_from_disk"><code class="docutils literal notranslate"><span class="pre">Unit.set_param_group_from_disk()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit.rename_param_group"><code class="docutils literal notranslate"><span class="pre">Unit.rename_param_group()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit.run"><code class="docutils literal notranslate"><span class="pre">Unit.run()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit._get_param_group_map_dict"><code class="docutils literal notranslate"><span class="pre">Unit._get_param_group_map_dict()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit.to_info_dict"><code class="docutils literal notranslate"><span class="pre">Unit.to_info_dict()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit.src_obj_info"><code class="docutils literal notranslate"><span class="pre">Unit.src_obj_info</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit.__contains__"><code class="docutils literal notranslate"><span class="pre">Unit.__contains__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="module-unit_run.components">
+<span id="unit-run-components"></span><h1><a class="reference internal" href="#module-unit_run.components" title="unit_run.components"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unit_run.components</span></code></a><a class="headerlink" href="#module-unit_run.components" title="Permalink to this heading">#</a></h1>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this heading">#</a></h2>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this heading">#</a></h3>
+<table class="autosummary longtable table table-left">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unit_run.components.Base" title="unit_run.components.Base"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Base</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unit_run.components.Meta" title="unit_run.components.Meta"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Meta</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#unit_run.components.ParameterGroup" title="unit_run.components.ParameterGroup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ParameterGroup</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unit_run.components.Unit" title="unit_run.components.Unit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Unit</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="api">
+<h3>API<a class="headerlink" href="#api" title="Permalink to this heading">#</a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="unit_run.components.Base">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unit_run.components.</span></span><span class="sig-name descname"><span class="pre">Base</span></span><a class="reference internal" href="../../_modules/unit_run/components.html#Base"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Base" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unit_run.components.Base.PATH_TYPE">
+<span class="sig-name descname"><span class="pre">PATH_TYPE</span></span><a class="headerlink" href="#unit_run.components.Base.PATH_TYPE" title="Permalink to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Base.check_data">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Base.check_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Base.check_data" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Base.validate_data">
+<span class="sig-name descname"><span class="pre">validate_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Base.validate_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Base.validate_data" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Base.check">
+<span class="sig-name descname"><span class="pre">check</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Base.check"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Base.check" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="unit_run.components.Base.valid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">valid</span></span><a class="headerlink" href="#unit_run.components.Base.valid" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Base._check_file_name">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_check_file_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Base._check_file_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Base._check_file_name" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Base._check_path_to_load">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_check_path_to_load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">load_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Base._check_path_to_load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Base._check_path_to_load" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Base._check_before_load">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_check_before_load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">load_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Base._check_before_load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Base._check_before_load" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Base._load_raw_data">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_load_raw_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">load_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Base._load_raw_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Base._load_raw_data" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Base._check_after_load">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_check_after_load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Base._check_after_load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Base._check_after_load" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Base.is_path_loadable">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_path_loadable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">load_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Base.is_path_loadable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Base.is_path_loadable" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Base._create_obj_by_raw_data">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_create_obj_by_raw_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Base._create_obj_by_raw_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Base._create_obj_by_raw_data" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Base._update">
+<span class="sig-name descname"><span class="pre">_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other_obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Base._update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Base._update" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Base.load_from_disk">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load_from_disk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">load_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Base.load_from_disk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Base.load_from_disk" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Base.valid_path_exists">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">valid_path_exists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Base.valid_path_exists"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Base.valid_path_exists" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Base._check_before_save">
+<span class="sig-name descname"><span class="pre">_check_before_save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Base._check_before_save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Base._check_before_save" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Base._save">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Base._save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Base._save" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Base._after_save">
+<span class="sig-name descname"><span class="pre">_after_save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Base._after_save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Base._after_save" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Base._exist_handler">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_exist_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Base._exist_handler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Base._exist_handler" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Base.save_to_disk">
+<span class="sig-name descname"><span class="pre">save_to_disk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all_overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Base.save_to_disk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Base.save_to_disk" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Base.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Base.to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Base.to_dict" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Base.to_info_dict">
+<span class="sig-name descname"><span class="pre">to_info_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Base.to_info_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Base.to_info_dict" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Base.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="../../_modules/unit_run/components.html#Base.__str__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Base.__str__" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="unit_run.components.Meta">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unit_run.components.</span></span><span class="sig-name descname"><span class="pre">Meta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Meta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Meta" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#unit_run.components.Base" title="unit_run.components.Base"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unit_run.components.Base</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unit_run.components.Meta.FILE_NAME">
+<span class="sig-name descname"><span class="pre">FILE_NAME</span></span><a class="headerlink" href="#unit_run.components.Meta.FILE_NAME" title="Permalink to this definition">#</a></dt>
+<dd><p>‘.meta.json’</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unit_run.components.Meta.PATH_TYPE">
+<span class="sig-name descname"><span class="pre">PATH_TYPE</span></span><a class="headerlink" href="#unit_run.components.Meta.PATH_TYPE" title="Permalink to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Meta.check_data">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">param</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Meta.check_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Meta.check_data" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Meta.get_path_by_dir">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_path_by_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">meta_dir</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Meta.get_path_by_dir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Meta.get_path_by_dir" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Meta.property">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Meta.property"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Meta.property" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Meta._check_file_name">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_check_file_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Meta._check_file_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Meta._check_file_name" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Meta._load_raw_data">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_load_raw_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">load_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Meta._load_raw_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Meta._load_raw_data" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Meta._check_after_load">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_check_after_load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Meta._check_after_load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Meta._check_after_load" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Meta._create_obj_by_raw_data">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_create_obj_by_raw_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Meta._create_obj_by_raw_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Meta._create_obj_by_raw_data" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Meta._save">
+<span class="sig-name descname"><span class="pre">_save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Meta._save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Meta._save" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="unit_run.components.ParameterGroup">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unit_run.components.</span></span><span class="sig-name descname"><span class="pre">ParameterGroup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#ParameterGroup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.ParameterGroup" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#unit_run.components.Base" title="unit_run.components.Base"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unit_run.components.Base</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unit_run.components.ParameterGroup.FILE_SUFFIX">
+<span class="sig-name descname"><span class="pre">FILE_SUFFIX</span></span><a class="headerlink" href="#unit_run.components.ParameterGroup.FILE_SUFFIX" title="Permalink to this definition">#</a></dt>
+<dd><p>‘.param_group.json’</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unit_run.components.ParameterGroup.PATH_TYPE">
+<span class="sig-name descname"><span class="pre">PATH_TYPE</span></span><a class="headerlink" href="#unit_run.components.ParameterGroup.PATH_TYPE" title="Permalink to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.ParameterGroup.check_data">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#ParameterGroup.check_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.ParameterGroup.check_data" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.ParameterGroup.check">
+<span class="sig-name descname"><span class="pre">check</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#ParameterGroup.check"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.ParameterGroup.check" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.ParameterGroup.get_file_name">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_file_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#ParameterGroup.get_file_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.ParameterGroup.get_file_name" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.ParameterGroup.get_path_by_dir_and_name">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_path_by_dir_and_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#ParameterGroup.get_path_by_dir_and_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.ParameterGroup.get_path_by_dir_and_name" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.ParameterGroup.get_name_from_path">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_name_from_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#ParameterGroup.get_name_from_path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.ParameterGroup.get_name_from_path" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.ParameterGroup._check_file_name">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_check_file_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#ParameterGroup._check_file_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.ParameterGroup._check_file_name" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.ParameterGroup._load_raw_data">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_load_raw_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">load_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#ParameterGroup._load_raw_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.ParameterGroup._load_raw_data" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.ParameterGroup.load_by_dir_and_name">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load_by_dir_and_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#ParameterGroup.load_by_dir_and_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.ParameterGroup.load_by_dir_and_name" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.ParameterGroup._save">
+<span class="sig-name descname"><span class="pre">_save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#ParameterGroup._save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.ParameterGroup._save" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.ParameterGroup.save_by_dir_and_name">
+<span class="sig-name descname"><span class="pre">save_by_dir_and_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#ParameterGroup.save_by_dir_and_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.ParameterGroup.save_by_dir_and_name" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="unit_run.components.Unit">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unit_run.components.</span></span><span class="sig-name descname"><span class="pre">Unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Unit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Unit" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#unit_run.components.Base" title="unit_run.components.Base"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unit_run.components.Base</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unit_run.components.Unit.PATH_TYPE">
+<span class="sig-name descname"><span class="pre">PATH_TYPE</span></span><a class="headerlink" href="#unit_run.components.Unit.PATH_TYPE" title="Permalink to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Unit.src_path">
+<span class="sig-name descname"><span class="pre">src_path</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unit_run.components.Unit.src_path" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Unit.src_name">
+<span class="sig-name descname"><span class="pre">src_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unit_run.components.Unit.src_name" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Unit.check_data">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Unit.check_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Unit.check_data" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Unit.check_src_obj">
+<span class="sig-name descname"><span class="pre">check_src_obj</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Unit.check_src_obj"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Unit.check_src_obj" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="unit_run.components.Unit.src_obj_valid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">src_obj_valid</span></span><a class="headerlink" href="#unit_run.components.Unit.src_obj_valid" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="unit_run.components.Unit.src_obj">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">src_obj</span></span><a class="headerlink" href="#unit_run.components.Unit.src_obj" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Unit._check_path_to_load">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_check_path_to_load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">load_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Unit._check_path_to_load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Unit._check_path_to_load" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Unit._check_after_load">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_check_after_load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Unit._check_after_load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Unit._check_after_load" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Unit.get_param_group_pairs_from_dir">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_param_group_pairs_from_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Unit.get_param_group_pairs_from_dir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Unit.get_param_group_pairs_from_dir" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Unit._load_raw_data">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_load_raw_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">load_dir</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Unit._load_raw_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Unit._load_raw_data" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Unit._create_obj_by_raw_data">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_create_obj_by_raw_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Unit._create_obj_by_raw_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Unit._create_obj_by_raw_data" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Unit._check_before_save">
+<span class="sig-name descname"><span class="pre">_check_before_save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Unit._check_before_save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Unit._check_before_save" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Unit._save">
+<span class="sig-name descname"><span class="pre">_save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_dir</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Unit._save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Unit._save" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Unit.set_param_group">
+<span class="sig-name descname"><span class="pre">set_param_group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_check</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Unit.set_param_group"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Unit.set_param_group" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Unit.set_param_group_from_disk">
+<span class="sig-name descname"><span class="pre">set_param_group_from_disk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Unit.set_param_group_from_disk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Unit.set_param_group_from_disk" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Unit.rename_param_group">
+<span class="sig-name descname"><span class="pre">rename_param_group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">old_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Unit.rename_param_group"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Unit.rename_param_group" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Unit.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Unit.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Unit.run" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Unit._get_param_group_map_dict">
+<span class="sig-name descname"><span class="pre">_get_param_group_map_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Unit._get_param_group_map_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Unit._get_param_group_map_dict" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Unit.to_info_dict">
+<span class="sig-name descname"><span class="pre">to_info_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Unit.to_info_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Unit.to_info_dict" title="Permalink to this definition">#</a></dt>
+<dd><p>The information <code class="docutils literal notranslate"><span class="pre">dict</span></code> for the source unit object</p>
+<dl class="myst field-list simple">
+<dt class="field-odd">Example<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="nb">print</span><span class="p">(</span><span class="n">unit</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;meta&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;src_path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;test.py&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;src_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;y&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;load_path&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;meta_valid&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;src_valid&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;src_obj_info&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;param_group_map&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;name1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;load_path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;test/name1.param_group.json&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;valid&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;name2&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;load_path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;test/name3.param_group.json&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;valid&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="unit_run.components.Unit.src_obj_info">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">src_obj_info</span></span><a class="headerlink" href="#unit_run.components.Unit.src_obj_info" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_run.components.Unit.__contains__">
+<span class="sig-name descname"><span class="pre">__contains__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/unit_run/components.html#Unit.__contains__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_run.components.Unit.__contains__" title="Permalink to this definition">#</a></dt>
+<dd><p>Whether <em>group_name</em> <code class="docutils literal notranslate"><span class="pre">in</span></code> param_group_map of Unit</p>
+<dl class="myst field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>group_name</strong> – Target parameter group name</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Whether <em>group_name</em> <code class="docutils literal notranslate"><span class="pre">in</span></code> param_group_map of Unit</p>
+</dd>
+<dt class="field-odd">Example<span class="colon">:</span></dt>
+<dd class="field-odd"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">unit</span> <span class="o">=</span> <span class="n">Unit</span><span class="p">(</span><span class="n">src_path</span><span class="p">,</span> <span class="n">src_name</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;name1&#39;</span> <span class="ow">in</span> <span class="n">unit</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./apidocs\unit_run"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="unit_run.cli.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unit_run.cli</span></code></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="unit_run.utils.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unit_run.utils</span></code></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api">API</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base"><code class="docutils literal notranslate"><span class="pre">Base</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base.PATH_TYPE"><code class="docutils literal notranslate"><span class="pre">Base.PATH_TYPE</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base.check_data"><code class="docutils literal notranslate"><span class="pre">Base.check_data()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base.validate_data"><code class="docutils literal notranslate"><span class="pre">Base.validate_data()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base.check"><code class="docutils literal notranslate"><span class="pre">Base.check()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base.valid"><code class="docutils literal notranslate"><span class="pre">Base.valid</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base._check_file_name"><code class="docutils literal notranslate"><span class="pre">Base._check_file_name()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base._check_path_to_load"><code class="docutils literal notranslate"><span class="pre">Base._check_path_to_load()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base._check_before_load"><code class="docutils literal notranslate"><span class="pre">Base._check_before_load()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base._load_raw_data"><code class="docutils literal notranslate"><span class="pre">Base._load_raw_data()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base._check_after_load"><code class="docutils literal notranslate"><span class="pre">Base._check_after_load()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base.is_path_loadable"><code class="docutils literal notranslate"><span class="pre">Base.is_path_loadable()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base._create_obj_by_raw_data"><code class="docutils literal notranslate"><span class="pre">Base._create_obj_by_raw_data()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base._update"><code class="docutils literal notranslate"><span class="pre">Base._update()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base.load_from_disk"><code class="docutils literal notranslate"><span class="pre">Base.load_from_disk()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base.valid_path_exists"><code class="docutils literal notranslate"><span class="pre">Base.valid_path_exists()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base._check_before_save"><code class="docutils literal notranslate"><span class="pre">Base._check_before_save()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base._save"><code class="docutils literal notranslate"><span class="pre">Base._save()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base._after_save"><code class="docutils literal notranslate"><span class="pre">Base._after_save()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base._exist_handler"><code class="docutils literal notranslate"><span class="pre">Base._exist_handler()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base.save_to_disk"><code class="docutils literal notranslate"><span class="pre">Base.save_to_disk()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base.to_dict"><code class="docutils literal notranslate"><span class="pre">Base.to_dict()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base.to_info_dict"><code class="docutils literal notranslate"><span class="pre">Base.to_info_dict()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Base.__str__"><code class="docutils literal notranslate"><span class="pre">Base.__str__()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Meta"><code class="docutils literal notranslate"><span class="pre">Meta</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Meta.FILE_NAME"><code class="docutils literal notranslate"><span class="pre">Meta.FILE_NAME</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Meta.PATH_TYPE"><code class="docutils literal notranslate"><span class="pre">Meta.PATH_TYPE</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Meta.check_data"><code class="docutils literal notranslate"><span class="pre">Meta.check_data()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Meta.get_path_by_dir"><code class="docutils literal notranslate"><span class="pre">Meta.get_path_by_dir()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Meta.property"><code class="docutils literal notranslate"><span class="pre">Meta.property()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Meta._check_file_name"><code class="docutils literal notranslate"><span class="pre">Meta._check_file_name()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Meta._load_raw_data"><code class="docutils literal notranslate"><span class="pre">Meta._load_raw_data()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Meta._check_after_load"><code class="docutils literal notranslate"><span class="pre">Meta._check_after_load()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Meta._create_obj_by_raw_data"><code class="docutils literal notranslate"><span class="pre">Meta._create_obj_by_raw_data()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Meta._save"><code class="docutils literal notranslate"><span class="pre">Meta._save()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.ParameterGroup"><code class="docutils literal notranslate"><span class="pre">ParameterGroup</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.ParameterGroup.FILE_SUFFIX"><code class="docutils literal notranslate"><span class="pre">ParameterGroup.FILE_SUFFIX</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.ParameterGroup.PATH_TYPE"><code class="docutils literal notranslate"><span class="pre">ParameterGroup.PATH_TYPE</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.ParameterGroup.check_data"><code class="docutils literal notranslate"><span class="pre">ParameterGroup.check_data()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.ParameterGroup.check"><code class="docutils literal notranslate"><span class="pre">ParameterGroup.check()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.ParameterGroup.get_file_name"><code class="docutils literal notranslate"><span class="pre">ParameterGroup.get_file_name()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.ParameterGroup.get_path_by_dir_and_name"><code class="docutils literal notranslate"><span class="pre">ParameterGroup.get_path_by_dir_and_name()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.ParameterGroup.get_name_from_path"><code class="docutils literal notranslate"><span class="pre">ParameterGroup.get_name_from_path()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.ParameterGroup._check_file_name"><code class="docutils literal notranslate"><span class="pre">ParameterGroup._check_file_name()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.ParameterGroup._load_raw_data"><code class="docutils literal notranslate"><span class="pre">ParameterGroup._load_raw_data()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.ParameterGroup.load_by_dir_and_name"><code class="docutils literal notranslate"><span class="pre">ParameterGroup.load_by_dir_and_name()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.ParameterGroup._save"><code class="docutils literal notranslate"><span class="pre">ParameterGroup._save()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.ParameterGroup.save_by_dir_and_name"><code class="docutils literal notranslate"><span class="pre">ParameterGroup.save_by_dir_and_name()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit"><code class="docutils literal notranslate"><span class="pre">Unit</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit.PATH_TYPE"><code class="docutils literal notranslate"><span class="pre">Unit.PATH_TYPE</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit.src_path"><code class="docutils literal notranslate"><span class="pre">Unit.src_path()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit.src_name"><code class="docutils literal notranslate"><span class="pre">Unit.src_name()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit.check_data"><code class="docutils literal notranslate"><span class="pre">Unit.check_data()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit.check_src_obj"><code class="docutils literal notranslate"><span class="pre">Unit.check_src_obj()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit.src_obj_valid"><code class="docutils literal notranslate"><span class="pre">Unit.src_obj_valid</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit.src_obj"><code class="docutils literal notranslate"><span class="pre">Unit.src_obj</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit._check_path_to_load"><code class="docutils literal notranslate"><span class="pre">Unit._check_path_to_load()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit._check_after_load"><code class="docutils literal notranslate"><span class="pre">Unit._check_after_load()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit.get_param_group_pairs_from_dir"><code class="docutils literal notranslate"><span class="pre">Unit.get_param_group_pairs_from_dir()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit._load_raw_data"><code class="docutils literal notranslate"><span class="pre">Unit._load_raw_data()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit._create_obj_by_raw_data"><code class="docutils literal notranslate"><span class="pre">Unit._create_obj_by_raw_data()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit._check_before_save"><code class="docutils literal notranslate"><span class="pre">Unit._check_before_save()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit._save"><code class="docutils literal notranslate"><span class="pre">Unit._save()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit.set_param_group"><code class="docutils literal notranslate"><span class="pre">Unit.set_param_group()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit.set_param_group_from_disk"><code class="docutils literal notranslate"><span class="pre">Unit.set_param_group_from_disk()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit.rename_param_group"><code class="docutils literal notranslate"><span class="pre">Unit.rename_param_group()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit.run"><code class="docutils literal notranslate"><span class="pre">Unit.run()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit._get_param_group_map_dict"><code class="docutils literal notranslate"><span class="pre">Unit._get_param_group_map_dict()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit.to_info_dict"><code class="docutils literal notranslate"><span class="pre">Unit.to_info_dict()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit.src_obj_info"><code class="docutils literal notranslate"><span class="pre">Unit.src_obj_info</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#unit_run.components.Unit.__contains__"><code class="docutils literal notranslate"><span class="pre">Unit.__contains__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Lingfei He
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

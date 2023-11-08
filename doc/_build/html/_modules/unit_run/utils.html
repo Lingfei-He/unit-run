@@ -1,0 +1,541 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>unit_run.utils &#8212; unit-run</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/all.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/unit_run/utils';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">unit-run</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Lingfei-He/unit-run" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/unit-run/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Lingfei-He/unit-run/issues" title="Forum" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-solid fa-comments fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Forum</span></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../installation/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation/package_installation.html">Package Installation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../user_guide/CLI_Tool/index.html">CLI Tool</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../user_guide/CLI_Tool/once.html">One-time unit running</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_guide/CLI_Tool/store.html">Create a stored <code class="docutils literal notranslate"><span class="pre">Unit</span></code> for the following runs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_guide/CLI_Tool/run.html">Run a stored <code class="docutils literal notranslate"><span class="pre">Unit</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_guide/CLI_Tool/view.html">Inspect or view <code class="docutils literal notranslate"><span class="pre">Unit</span></code> information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_guide/CLI_Tool/set.html">Set named parameter groups for a stored <code class="docutils literal notranslate"><span class="pre">Unit</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_guide/CLI_Tool/del.html">Delete named parameter groups or the entire <code class="docutils literal notranslate"><span class="pre">Unit</span></code> for a stored Unit</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">APIs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../apidocs/unit_run/unit_run.cli.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unit_run.cli</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidocs/unit_run/unit_run.components.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unit_run.components</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidocs/unit_run/unit_run.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unit_run.utils</span></code></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for unit_run.utils</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">inspect</span><span class="o">,</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">importlib</span><span class="o">,</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="kn">import</span> <span class="nn">functools</span>
+
+<div class="viewcode-block" id="inspect_by_path"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.utils.html#unit_run.utils.inspect_by_path">[docs]</a><span class="k">def</span> <span class="nf">inspect_by_path</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">filter_func</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">with_name</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">     Inspect a module and return a list of objects that passed a test by the filter funciton. </span>
+<span class="sd">     </span>
+<span class="sd">     :param path: The path to inspect.</span>
+<span class="sd">     :param filter_func: A function that takes a module member as parameter and returns whether one member should be included in the results.</span>
+<span class="sd">     :param with_name: If True the name of the object will be included in the result.</span>
+<span class="sd">     :returns: A list of ( name object ) tuples. If no path is given an empty list is returned. &gt;&gt;&gt; from machinery</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Return an array of paths to the file or an empty list if the path does not exist.</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[]</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
+    <span class="n">filter_func</span> <span class="o">=</span> <span class="n">filter_func</span> <span class="k">if</span> <span class="n">filter_func</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">((</span><span class="k">lambda</span> <span class="n">obj</span><span class="p">:</span> <span class="kc">True</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">with_name</span> <span class="k">else</span> <span class="p">(</span><span class="k">lambda</span> <span class="n">obj</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="kc">True</span><span class="p">))</span>
+    <span class="n">_tmp_module</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">machinery</span><span class="o">.</span><span class="n">SourceFileLoader</span><span class="p">(</span><span class="s1">&#39;_tmp_module&#39;</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">load_module</span><span class="p">()</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1"># Return a list of all the objects in the module.</span>
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getmembers</span><span class="p">(</span><span class="n">_tmp_module</span><span class="p">):</span>
+        <span class="n">param</span> <span class="o">=</span> <span class="p">[</span><span class="n">obj</span><span class="p">,</span> <span class="n">name</span><span class="p">]</span> <span class="k">if</span> <span class="n">with_name</span> <span class="k">else</span> <span class="p">[</span><span class="n">obj</span><span class="p">]</span>
+        <span class="c1"># Add a new object to the results list.</span>
+        <span class="k">if</span> <span class="n">filter_func</span><span class="p">(</span><span class="o">*</span><span class="n">param</span><span class="p">):</span>
+            <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span> <span class="k">if</span> <span class="n">with_name</span> <span class="k">else</span> <span class="n">obj</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">results</span></div>
+    
+
+<div class="viewcode-block" id="inspect_callables_by_path"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.utils.html#unit_run.utils.inspect_callables_by_path">[docs]</a><span class="k">def</span> <span class="nf">inspect_callables_by_path</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">     Inspect a file and return a list of callables. This is a wrapper around inspect_by_path with the exception that we don&#39;t want to inspect classes or functions that are in _tmp_module.</span>
+<span class="sd">     </span>
+<span class="sd">     :param path: Path to the file to inspect. Can be a file or a directory.</span>
+<span class="sd">     :returns: A list of inspect. Classes or inspect. Function objects in the file at the given path. If there are no calls to the file it returns an empty list</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">filter_func</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">         Filter function to determine if it is a class or function. This is used to prevent __init__ from being called for classes that inherit from _tmp_module</span>
+<span class="sd">         </span>
+<span class="sd">         :param obj: The object to inspect.</span>
+<span class="sd">         :returns: True if the object is a class or function False otherwise. &gt;&gt;&gt; filter_func ( lambda obj : obj. __class__ ==&#39;__init__ &#39;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">inspect</span><span class="o">.</span><span class="n">isclass</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="ow">or</span> <span class="n">inspect</span><span class="o">.</span><span class="n">isfunction</span><span class="p">(</span><span class="n">obj</span><span class="p">))</span> <span class="ow">and</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__module__</span> <span class="o">==</span> <span class="s1">&#39;_tmp_module&#39;</span>
+    <span class="k">return</span> <span class="n">inspect_by_path</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">filter_func</span><span class="p">,</span> <span class="n">with_name</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="get_info_dict_from_callable"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.utils.html#unit_run.utils.get_info_dict_from_callable">[docs]</a><span class="k">def</span> <span class="nf">get_info_dict_from_callable</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">     Get information about a callable. This is used to generate a JSON - serializable dictionary that can be serialized to JSON.</span>
+<span class="sd">     </span>
+<span class="sd">     :param c: The callable to get information about. Must be a callable</span>
+<span class="sd">     :returns: A dictionary containing information about the</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">info</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">c</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span>
+        <span class="s1">&#39;paramters&#39;</span><span class="p">:</span> <span class="p">[]</span>
+    <span class="p">}</span>
+    <span class="c1"># Add parameters to the info paramters.</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="o">.</span><span class="n">parameters</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+            <span class="s1">&#39;annotation&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">annotation</span><span class="p">),</span>
+            <span class="s1">&#39;kind&#39;</span><span class="p">:</span> <span class="n">p</span><span class="o">.</span><span class="n">kind</span><span class="o">.</span><span class="n">description</span>
+        <span class="p">}</span>
+        <span class="c1"># Set default value of item</span>
+        <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">default</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">p</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+            <span class="n">item</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">default</span>
+        <span class="n">info</span><span class="p">[</span><span class="s1">&#39;paramters&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">info</span></div>
+
+<div class="viewcode-block" id="inspect_callable_infos_by_path"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.utils.html#unit_run.utils.inspect_callable_infos_by_path">[docs]</a><span class="k">def</span> <span class="nf">inspect_callable_infos_by_path</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">     Inspects callable infos by path. This is a wrapper around inspect_callables_by_path that returns a list of dictionaries.</span>
+<span class="sd">     </span>
+<span class="sd">     :param path: Path to inspect callable infos. Can be a file path or a string containing globs.</span>
+<span class="sd">     :returns: A list of dictionaries one for each callable that has been inspected. Each dictionary is a dictionary with keys corresponding to the callable&#39;s name and values corresponding to the information returned by get_info_dict_from_callable</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">result_infos</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1"># Returns a list of all callable functions in the callables by path.</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">inspect_callables_by_path</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+        <span class="n">result_infos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">get_info_dict_from_callable</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">result_infos</span></div>
+    <span class="c1"># callable_sigs = [inspect.signature(c) for c in ] </span>
+    <span class="c1"># callable_infos = [{</span>
+
+    <span class="c1"># } for sig in callable_sigs]</span>
+<div class="viewcode-block" id="find_callable_by_name"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.utils.html#unit_run.utils.find_callable_by_name">[docs]</a><span class="k">def</span> <span class="nf">find_callable_by_name</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">     Find callable by name. This is a wrapper around inspect_callables_by_path to search for callable with given name.</span>
+<span class="sd">     </span>
+<span class="sd">     :param path: Path to the callable in Celery.</span>
+<span class="sd">     :param name: Name of callable to find. It must be a string.</span>
+<span class="sd">     :returns: Callable if found None otherwise. &gt;&gt;&gt; from sympy. utilities. iterables import find_callable_by_name Traceback ( most recent call last ) : TypeError : name is</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="n">c</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="n">name</span><span class="p">,</span> <span class="n">inspect_callables_by_path</span><span class="p">(</span><span class="n">path</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="load_json"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.utils.html#unit_run.utils.load_json">[docs]</a><span class="k">def</span> <span class="nf">load_json</span><span class="p">(</span><span class="n">json_path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">     Load a JSON file from the given path.</span>
+<span class="sd">     </span>
+<span class="sd">     :param json_path: Path to the JSON file. Must be a string.</span>
+<span class="sd">     :returns: An object of the JSON file that was loaded from the file at ` json_path `. See : func : ` json. load ` for details</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">json_path</span><span class="p">))</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="save_as_json"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.utils.html#unit_run.utils.save_as_json">[docs]</a><span class="k">def</span> <span class="nf">save_as_json</span><span class="p">(</span><span class="n">json_path</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">     Saves a python object as JSON. This is a convenience function for creating a file in the same directory as the json_path</span>
+<span class="sd">     </span>
+<span class="sd">     :param json_path: Path to the JSON file</span>
+<span class="sd">     :param obj: Object to be saved as JSON. It can be any python object</span>
+<span class="sd">     :param indent: Number of spaces to indent JSON output default is</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">json_path</span><span class="p">),</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="n">indent</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PathType"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.utils.html#unit_run.utils.PathType">[docs]</a><span class="k">class</span> <span class="nc">PathType</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">FILE</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">DIRECTORY</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">BOTH</span> <span class="o">=</span> <span class="mi">3</span></div>
+
+
+<div class="viewcode-block" id="auto_type_check"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.utils.html#unit_run.utils.auto_type_check">[docs]</a><span class="k">def</span> <span class="nf">auto_type_check</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">     Decorator to check type of parameters. This decorator is used to check the type of parameters passed to a function by inspecting the function signature.</span>
+<span class="sd">     </span>
+<span class="sd">     :param func: function to be wrapped. It must have at least one parameter</span>
+<span class="sd">     :returns: wrapped function with type</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">wrap</span><span class="p">(</span><span class="o">*</span><span class="n">param</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">         Wrap function with annotations. This is a wrapper for func ( * param ** kwargs ). The arguments are passed to func as positional arguments and the keyword arguments are passed as keyword arguments.</span>
+<span class="sd">         </span>
+<span class="sd">         :returns: result of func ( * param ** kwargs ) with annotations applied to the parameter values if annotations are present</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Check if the argument is a parameter type.</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">func</span><span class="p">)</span><span class="o">.</span><span class="n">parameters</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">annotation</span>
+            <span class="c1"># TypeError if argument is not of type t.</span>
+            <span class="k">if</span> <span class="n">t</span> <span class="o">!=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">_empty</span><span class="p">:</span>
+                <span class="n">arg_value</span> <span class="o">=</span> <span class="n">param</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">param</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">i</span> <span class="k">else</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+                <span class="c1"># TypeError if argument_value is not of type t.</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg_value</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Argument &#39;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&#39; should be &#39;</span><span class="si">{</span><span class="n">t</span><span class="si">}</span><span class="s2">&#39; type, not &#39;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">arg_value</span><span class="p">)</span><span class="si">}</span><span class="s2">&#39; type.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">param</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>    
+    <span class="k">return</span> <span class="n">wrap</span></div>
+
+<div class="viewcode-block" id="_test"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.utils.html#unit_run.utils._test">[docs]</a><span class="k">def</span> <span class="nf">_test</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">     This is a test function. It should be used in a unit test as the first argument to the function</span>
+<span class="sd">     </span>
+<span class="sd">     :param a: The object to test</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+</pre></div>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Lingfei He
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

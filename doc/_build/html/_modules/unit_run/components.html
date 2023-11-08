@@ -1,0 +1,945 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>unit_run.components &#8212; unit-run</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/all.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/unit_run/components';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">unit-run</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Lingfei-He/unit-run" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/unit-run/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Lingfei-He/unit-run/issues" title="Forum" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-solid fa-comments fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Forum</span></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../installation/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation/package_installation.html">Package Installation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../user_guide/CLI_Tool/index.html">CLI Tool</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../user_guide/CLI_Tool/once.html">One-time unit running</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_guide/CLI_Tool/store.html">Create a stored <code class="docutils literal notranslate"><span class="pre">Unit</span></code> for the following runs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_guide/CLI_Tool/run.html">Run a stored <code class="docutils literal notranslate"><span class="pre">Unit</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_guide/CLI_Tool/view.html">Inspect or view <code class="docutils literal notranslate"><span class="pre">Unit</span></code> information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_guide/CLI_Tool/set.html">Set named parameter groups for a stored <code class="docutils literal notranslate"><span class="pre">Unit</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_guide/CLI_Tool/del.html">Delete named parameter groups or the entire <code class="docutils literal notranslate"><span class="pre">Unit</span></code> for a stored Unit</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">APIs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../apidocs/unit_run/unit_run.cli.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unit_run.cli</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidocs/unit_run/unit_run.components.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unit_run.components</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidocs/unit_run/unit_run.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unit_run.utils</span></code></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for unit_run.components</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span><span class="p">,</span> <span class="n">abstractclassmethod</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="vm">__file__</span><span class="p">,</span> <span class="s1">&#39;..&#39;</span><span class="p">)))</span>
+<span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="n">PathType</span><span class="p">,</span> <span class="n">save_as_json</span><span class="p">,</span> <span class="n">load_json</span><span class="p">,</span> <span class="n">auto_type_check</span><span class="p">,</span> <span class="n">get_info_dict_from_callable</span><span class="p">,</span> <span class="n">find_callable_by_name</span>
+<span class="kn">import</span> <span class="nn">shutil</span><span class="o">,</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">json</span>
+
+<div class="viewcode-block" id="Base"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Base">[docs]</a><span class="k">class</span> <span class="nc">Base</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+    <span class="n">PATH_TYPE</span> <span class="o">=</span> <span class="n">PathType</span><span class="o">.</span><span class="n">BOTH</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">load_path</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="Base.check_data"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Base.check_data">[docs]</a>    <span class="nd">@abstractclassmethod</span>
+    <span class="k">def</span> <span class="nf">check_data</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="Base.validate_data"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Base.validate_data">[docs]</a>    <span class="k">def</span> <span class="nf">validate_data</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">cls</span><span class="o">.</span><span class="n">check_data</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span></div>
+
+<div class="viewcode-block" id="Base.check"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Base.check">[docs]</a>    <span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">check_data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">valid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+<div class="viewcode-block" id="Base._check_file_name"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Base._check_file_name">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_check_file_name</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file_name</span><span class="p">):</span>
+        <span class="k">pass</span></div>
+    
+<div class="viewcode-block" id="Base._check_path_to_load"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Base._check_path_to_load">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_check_path_to_load</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">load_path</span><span class="p">):</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">load_path</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">&#39; doesn&#39;t exists for loading&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">cls</span><span class="o">.</span><span class="n">PATH_TYPE</span> <span class="o">==</span> <span class="n">PathType</span><span class="o">.</span><span class="n">FILE</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">path</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;There is no such a file to load: </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">cls</span><span class="o">.</span><span class="n">PATH_TYPE</span> <span class="o">==</span> <span class="n">PathType</span><span class="o">.</span><span class="n">DIRECTORY</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">path</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;There is no such a directory to load: </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="bp">cls</span><span class="o">.</span><span class="n">_check_file_name</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">name</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Base._check_before_load"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Base._check_before_load">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_check_before_load</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">load_path</span><span class="p">):</span>
+        <span class="bp">cls</span><span class="o">.</span><span class="n">_check_path_to_load</span><span class="p">(</span><span class="n">load_path</span><span class="p">)</span></div>
+        
+<div class="viewcode-block" id="Base._load_raw_data"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Base._load_raw_data">[docs]</a>    <span class="nd">@abstractclassmethod</span>
+    <span class="k">def</span> <span class="nf">_load_raw_data</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">load_path</span><span class="p">):</span>
+        <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="Base._check_after_load"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Base._check_after_load">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_check_after_load</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">raw_data</span><span class="p">):</span>
+        <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="Base.is_path_loadable"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Base.is_path_loadable">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">is_path_loadable</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">load_path</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">cls</span><span class="o">.</span><span class="n">_check_before_load</span><span class="p">(</span><span class="n">load_path</span><span class="p">)</span>
+            <span class="bp">cls</span><span class="o">.</span><span class="n">_check_after_load</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">_load_raw_data</span><span class="p">(</span><span class="n">load_path</span><span class="p">))</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span></div>
+
+<div class="viewcode-block" id="Base._create_obj_by_raw_data"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Base._create_obj_by_raw_data">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_create_obj_by_raw_data</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">raw_data</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">raw_data</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Base._update"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Base._update">[docs]</a>    <span class="k">def</span> <span class="nf">_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other_obj</span><span class="p">):</span>
+        <span class="n">other_t</span><span class="p">,</span> <span class="n">self_t</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">other_obj</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">other_t</span><span class="p">,</span> <span class="n">self_t</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The class &#39;</span><span class="si">{</span><span class="n">other_t</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39; of  the other object is not the subclass of &#39;</span><span class="si">{</span><span class="n">self_t</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">)</span> 
+        <span class="k">for</span> <span class="n">attr_name</span><span class="p">,</span> <span class="n">attr_value</span> <span class="ow">in</span> <span class="nb">vars</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr_name</span><span class="p">,</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">other_obj</span><span class="p">,</span> <span class="n">attr_name</span><span class="p">))</span></div>
+    
+
+<div class="viewcode-block" id="Base.load_from_disk"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Base.load_from_disk">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">load_from_disk</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">load_path</span><span class="p">):</span>
+        <span class="bp">cls</span><span class="o">.</span><span class="n">_check_before_load</span><span class="p">(</span><span class="n">load_path</span><span class="p">)</span>
+        <span class="n">raw_data</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_load_raw_data</span><span class="p">(</span><span class="n">load_path</span><span class="p">)</span>
+        <span class="bp">cls</span><span class="o">.</span><span class="n">_check_after_load</span><span class="p">(</span><span class="n">raw_data</span><span class="p">)</span>
+        <span class="n">new_obj</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_create_obj_by_raw_data</span><span class="p">(</span><span class="n">raw_data</span><span class="p">)</span>
+        <span class="n">new_obj</span><span class="o">.</span><span class="n">load_path</span> <span class="o">=</span> <span class="n">load_path</span>
+        <span class="k">return</span> <span class="n">new_obj</span></div>
+    
+<div class="viewcode-block" id="Base.valid_path_exists"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Base.valid_path_exists">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">valid_path_exists</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span> <span class="c1"># should not validate the internal data to load</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">cls</span><span class="o">.</span><span class="n">_check_path_to_load</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span></div>
+    
+<div class="viewcode-block" id="Base._check_before_save"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Base._check_before_save">[docs]</a>    <span class="k">def</span> <span class="nf">_check_before_save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">save_path</span><span class="p">):</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">save_path</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">path</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The parent directory to save doesn&#39;t exist: </span><span class="si">{</span><span class="n">path</span><span class="o">.</span><span class="n">parent</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">valid_path_exists</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="ne">FileExistsError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s1"> has already existed and cannot be overwritten.&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_check_file_name</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">name</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Base._save"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Base._save">[docs]</a>    <span class="nd">@abstractmethod</span>        
+    <span class="k">def</span> <span class="nf">_save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">save_path</span><span class="p">):</span>
+        <span class="k">pass</span></div>
+        <span class="c1"># if </span>
+<div class="viewcode-block" id="Base._after_save"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Base._after_save">[docs]</a>    <span class="k">def</span> <span class="nf">_after_save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">save_path</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">load_path</span> <span class="o">=</span> <span class="n">save_path</span></div>
+
+<div class="viewcode-block" id="Base._exist_handler"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Base._exist_handler">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_exist_handler</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="p">))</span> <span class="k">if</span> <span class="n">path</span><span class="o">.</span><span class="n">is_file</span><span class="p">()</span> <span class="k">else</span> <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Base.save_to_disk"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Base.save_to_disk">[docs]</a>    <span class="k">def</span> <span class="nf">save_to_disk</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">save_path</span><span class="p">,</span> <span class="n">all_overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_check_before_save</span><span class="p">(</span><span class="n">save_path</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">FileExistsError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">all_overwrite</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_exist_handler</span><span class="p">(</span><span class="n">save_path</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">e</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_save</span><span class="p">(</span><span class="n">save_path</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_after_save</span><span class="p">(</span><span class="n">save_path</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Base.to_dict"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Base.to_dict">[docs]</a>    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span></div>
+    
+<div class="viewcode-block" id="Base.to_info_dict"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Base.to_info_dict">[docs]</a>    <span class="k">def</span> <span class="nf">to_info_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+        <span class="n">result</span><span class="p">[</span><span class="s1">&#39;valid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">valid</span>
+        <span class="k">return</span> <span class="n">result</span></div>
+    
+<div class="viewcode-block" id="Base.__str__"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Base.__str__">[docs]</a>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_info_dict</span><span class="p">(),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span></div></div>
+    
+
+<div class="viewcode-block" id="Meta"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Meta">[docs]</a><span class="k">class</span> <span class="nc">Meta</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
+    <span class="n">FILE_NAME</span> <span class="o">=</span> <span class="s1">&#39;.meta.json&#39;</span>
+    <span class="n">PATH_TYPE</span> <span class="o">=</span> <span class="n">PathType</span><span class="o">.</span><span class="n">FILE</span>
+
+    <span class="nd">@auto_type_check</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">src_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">src_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">src_path</span> <span class="o">=</span> <span class="n">src_path</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">src_name</span> <span class="o">=</span> <span class="n">src_name</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+<div class="viewcode-block" id="Meta.check_data"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Meta.check_data">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">check_data</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">param</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">param</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">meta</span> <span class="o">=</span> <span class="n">param</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">meta</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">t</span> <span class="o">==</span> <span class="n">Meta</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="s1">&#39;src_path&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="s1">&#39;src_name&#39;</span><span class="p">)):</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Invalid Meta Object: </span><span class="si">{</span><span class="n">meta</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">t</span> <span class="o">==</span> <span class="nb">dict</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="s1">&#39;src_path&#39;</span> <span class="ow">in</span> <span class="n">meta</span> <span class="ow">and</span> <span class="s1">&#39;src_name&#39;</span> <span class="ow">in</span> <span class="n">meta</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Invalid dict for Meta: </span><span class="si">{</span><span class="n">meta</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">t</span> <span class="o">==</span> <span class="nb">str</span> <span class="ow">or</span> <span class="n">t</span> <span class="o">==</span> <span class="n">Path</span><span class="p">:</span>
+                <span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">meta</span><span class="p">))</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">path</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+                    <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Meta file &#39;</span><span class="si">{</span><span class="n">path</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="si">}</span><span class="s2">&#39; doesn&#39;t exist.&quot;</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">path</span><span class="o">.</span><span class="n">suffix</span> <span class="o">!=</span> <span class="n">Path</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">FILE_NAME</span><span class="p">)</span><span class="o">.</span><span class="n">suffix</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid file type: &#39;</span><span class="si">{</span><span class="n">path</span><span class="o">.</span><span class="n">suffix</span><span class="si">}</span><span class="s2">&#39; (need &#39;</span><span class="si">{</span><span class="n">Path</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">FILE_NAME</span><span class="p">)</span><span class="o">.</span><span class="n">suffix</span><span class="si">}</span><span class="s2">&#39;).&quot;</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">json_data</span> <span class="o">=</span> <span class="n">load_json</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+                        <span class="bp">cls</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="n">json_data</span><span class="p">)</span>
+                    <span class="k">except</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid Json data read from &#39;</span><span class="si">{</span><span class="n">path</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">json_data</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">param</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="bp">cls</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">src_path</span><span class="o">=</span><span class="n">param</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">src_name</span><span class="o">=</span><span class="n">param</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">param</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Too many positional arguments for Meta: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">param</span><span class="p">)</span><span class="si">}</span><span class="s1"> (need 2).&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;There is no positional argument or keyword argument.&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="bp">cls</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Meta.get_path_by_dir"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Meta.get_path_by_dir">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_path_by_dir</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">meta_dir</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">meta_dir</span><span class="p">)</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">FILE_NAME</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">())</span></div>
+            
+
+<div class="viewcode-block" id="Meta.property"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Meta.property">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">property</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">getter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="p">,</span> <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+        
+        <span class="k">def</span> <span class="nf">setter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_v</span><span class="p">):</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="p">,</span> <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">new_v</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">property</span><span class="p">(</span><span class="n">getter</span><span class="p">,</span> <span class="n">setter</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Meta._check_file_name"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Meta._check_file_name">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_check_file_name</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file_name</span><span class="p">):</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+        <span class="n">target_suffix</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">FILE_NAME</span><span class="p">)</span><span class="o">.</span><span class="n">suffix</span>
+        <span class="k">if</span> <span class="n">path</span><span class="o">.</span><span class="n">suffix</span> <span class="o">!=</span> <span class="n">target_suffix</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The file type is not &#39;</span><span class="si">{</span><span class="n">target_suffix</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">path</span><span class="o">.</span><span class="n">name</span> <span class="o">!=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">FILE_NAME</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">NameError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The file name should be &#39;</span><span class="si">{</span><span class="bp">cls</span><span class="o">.</span><span class="n">FILE_NAME</span><span class="si">}</span><span class="s2">&#39;, not &#39;</span><span class="si">{</span><span class="n">path</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Meta._load_raw_data"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Meta._load_raw_data">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_load_raw_data</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">load_path</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">load_json</span><span class="p">(</span><span class="n">load_path</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Meta._check_after_load"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Meta._check_after_load">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_check_after_load</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">raw_data</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">raw_data</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">dict</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The type of meta&#39;s raw data should be &#39;</span><span class="si">{</span><span class="nb">dict</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39;, not &#39;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">raw_data</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">keys_to_check</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;src_path&#39;</span><span class="p">,</span> <span class="s1">&#39;src_name&#39;</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keys_to_check</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">raw_data</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The required key &#39;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&#39; of Meta is not in raw dict.&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Meta._create_obj_by_raw_data"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Meta._create_obj_by_raw_data">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_create_obj_by_raw_data</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">raw_data</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">raw_data</span><span class="p">[</span><span class="s1">&#39;src_path&#39;</span><span class="p">],</span> <span class="n">raw_data</span><span class="p">[</span><span class="s1">&#39;src_name&#39;</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="Meta._save"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Meta._save">[docs]</a>    <span class="k">def</span> <span class="nf">_save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">save_path</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+        <span class="k">del</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;load_path&#39;</span><span class="p">]</span>
+        <span class="n">save_as_json</span><span class="p">(</span><span class="n">save_path</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span></div></div>
+    
+
+<span class="c1"># meta_path = &#39;D:/documents/AcademicDocuments/customed_python_pkgs/unit-run/tests/test/.meta.json&#39;</span>
+<span class="c1"># new_meta_path = &#39;D:/documents/AcademicDocuments/customed_python_pkgs/unit-run/tests/.meta.json&#39;</span>
+<span class="c1"># meta = Meta.load_from_disk(meta_path) </span>
+<span class="c1"># print(meta.to_dict())</span>
+<span class="c1"># meta.save_to_disk(new_meta_path)</span>
+<span class="c1"># print(meta.to_dict())</span>
+<span class="c1"># path = Path(&#39;tzffaaf.json&#39;)</span>
+<span class="c1"># print(Path(path).suffix)</span>
+
+<div class="viewcode-block" id="ParameterGroup"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.ParameterGroup">[docs]</a><span class="k">class</span> <span class="nc">ParameterGroup</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
+    <span class="n">FILE_SUFFIX</span> <span class="o">=</span> <span class="s1">&#39;.param_group.json&#39;</span>
+    <span class="n">PATH_TYPE</span> <span class="o">=</span> <span class="n">PathType</span><span class="o">.</span><span class="n">FILE</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+<div class="viewcode-block" id="ParameterGroup.check_data"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.ParameterGroup.check_data">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">check_data</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="ParameterGroup.check"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.ParameterGroup.check">[docs]</a>    <span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">check_data</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ParameterGroup.get_file_name"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.ParameterGroup.get_file_name">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_file_name</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">name</span><span class="o">+</span><span class="bp">cls</span><span class="o">.</span><span class="n">FILE_SUFFIX</span></div>
+    
+<div class="viewcode-block" id="ParameterGroup.get_path_by_dir_and_name"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.ParameterGroup.get_path_by_dir_and_name">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_path_by_dir_and_name</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dir_path</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dir_path</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">get_file_name</span><span class="p">(</span><span class="n">name</span><span class="p">))</span></div>
+    
+<div class="viewcode-block" id="ParameterGroup.get_name_from_path"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.ParameterGroup.get_name_from_path">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_name_from_path</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">FILE_SUFFIX</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ParameterGroup._check_file_name"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.ParameterGroup._check_file_name">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_check_file_name</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file_name</span><span class="p">):</span>
+        <span class="n">splits</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+        <span class="n">err_msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;The file suffix of parameter group should be &#39;</span><span class="si">{</span><span class="bp">cls</span><span class="o">.</span><span class="n">FILE_SUFFIX</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">splits</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">err_msg</span> <span class="o">+=</span> <span class="s1">&#39;, instead empty.&#39;</span>
+            <span class="k">raise</span> <span class="ne">NameError</span><span class="p">(</span><span class="n">err_msg</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">suffix</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">splits</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:])</span>
+            <span class="k">if</span> <span class="n">suffix</span> <span class="o">!=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">FILE_SUFFIX</span><span class="p">:</span>
+                <span class="n">err_msg</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;, instead &#39;</span><span class="si">{</span><span class="n">suffix</span><span class="si">}</span><span class="s2">&#39;.&quot;</span>
+                <span class="k">raise</span> <span class="ne">NameError</span><span class="p">(</span><span class="n">err_msg</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ParameterGroup._load_raw_data"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.ParameterGroup._load_raw_data">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_load_raw_data</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">load_path</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">load_json</span><span class="p">(</span><span class="n">load_path</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="ParameterGroup.load_by_dir_and_name"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.ParameterGroup.load_by_dir_and_name">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">load_by_dir_and_name</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dir_path</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">load_from_disk</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">get_path_by_dir_and_name</span><span class="p">(</span><span class="n">dir_path</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="ParameterGroup._save"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.ParameterGroup._save">[docs]</a>    <span class="k">def</span> <span class="nf">_save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">save_path</span><span class="p">):</span>
+        <span class="n">save_as_json</span><span class="p">(</span><span class="n">save_path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span></div>
+        
+<div class="viewcode-block" id="ParameterGroup.save_by_dir_and_name"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.ParameterGroup.save_by_dir_and_name">[docs]</a>    <span class="k">def</span> <span class="nf">save_by_dir_and_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dir_path</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">save_to_disk</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_path_by_dir_and_name</span><span class="p">(</span><span class="n">dir_path</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span></div></div>
+    
+
+<span class="c1"># dir_path = &#39;D:/documents/AcademicDocuments/customed_python_pkgs/unit-run/tests&#39;</span>
+<span class="c1"># group = ParameterGroup(None)</span>
+<span class="c1"># print(group)</span>
+<span class="c1"># group.save_by_dir_and_name(dir_path, &#39;test&#39;)</span>
+<span class="c1"># print(group)</span>
+
+<div class="viewcode-block" id="Unit"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Unit">[docs]</a><span class="k">class</span> <span class="nc">Unit</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
+    <span class="n">PATH_TYPE</span> <span class="o">=</span> <span class="n">PathType</span><span class="o">.</span><span class="n">DIRECTORY</span>
+
+    <span class="nd">@Meta</span><span class="o">.</span><span class="n">property</span>
+    <span class="k">def</span> <span class="nf">src_path</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@Meta</span><span class="o">.</span><span class="n">property</span>
+    <span class="k">def</span> <span class="nf">src_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">src_path</span><span class="p">,</span> <span class="n">src_name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">meta</span> <span class="o">=</span> <span class="n">Meta</span><span class="p">(</span><span class="n">src_path</span><span class="p">,</span> <span class="n">src_name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">param_group_map</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+<div class="viewcode-block" id="Unit.check_data"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Unit.check_data">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">check_data</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">unit</span><span class="p">):</span>
+        <span class="n">unit</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">unit</span><span class="o">.</span><span class="n">param_group_map</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="n">group</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
+        <span class="n">unit</span><span class="o">.</span><span class="n">check_src_obj</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Unit.check_src_obj"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Unit.check_src_obj">[docs]</a>    <span class="k">def</span> <span class="nf">check_src_obj</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">src_path</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Source not found: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">src_path</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">src_obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">LookupError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cannot find the unit source &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">src_name</span><span class="si">}</span><span class="s2">&#39; from &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">src_path</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span></div>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">src_obj_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">check_src_obj</span><span class="p">()</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">src_obj</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">find_callable_by_name</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">src_path</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()),</span> <span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">src_name</span><span class="p">)</span>
+    
+<div class="viewcode-block" id="Unit._check_path_to_load"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Unit._check_path_to_load">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_check_path_to_load</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">load_path</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_check_path_to_load</span><span class="p">(</span><span class="n">load_path</span><span class="p">)</span>
+        <span class="n">sub_file_paths</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">load_path</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
+        <span class="n">meta_paths</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">path</span><span class="p">:</span> <span class="n">Meta</span><span class="o">.</span><span class="n">valid_path_exists</span><span class="p">(</span><span class="n">path</span><span class="p">),</span> <span class="n">sub_file_paths</span><span class="p">))</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">meta_paths</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">LookupError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;There is no valid meta file to load.&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Unit._check_after_load"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Unit._check_after_load">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_check_after_load</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">raw_data</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_check_after_load</span><span class="p">(</span><span class="n">raw_data</span><span class="p">)</span>
+        <span class="n">Meta</span><span class="o">.</span><span class="n">check_data</span><span class="p">(</span><span class="n">raw_data</span><span class="p">[</span><span class="s1">&#39;meta&#39;</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">raw_data</span><span class="p">[</span><span class="s1">&#39;param_group_pairs&#39;</span><span class="p">]:</span>
+            <span class="n">group</span><span class="o">.</span><span class="n">check</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Unit.get_param_group_pairs_from_dir"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Unit.get_param_group_pairs_from_dir">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_param_group_pairs_from_dir</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dir_path</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[(</span><span class="n">ParameterGroup</span><span class="o">.</span><span class="n">get_name_from_path</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="p">)),</span> <span class="n">ParameterGroup</span><span class="o">.</span><span class="n">load_from_disk</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="p">)))</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">Path</span><span class="p">(</span><span class="n">dir_path</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">ParameterGroup</span><span class="o">.</span><span class="n">valid_path_exists</span><span class="p">(</span><span class="n">path</span><span class="p">)]</span></div>
+
+<div class="viewcode-block" id="Unit._load_raw_data"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Unit._load_raw_data">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_load_raw_data</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">load_dir</span><span class="p">):</span>
+        <span class="n">meta_load_path</span> <span class="o">=</span> <span class="n">Meta</span><span class="o">.</span><span class="n">get_path_by_dir</span><span class="p">(</span><span class="n">load_dir</span><span class="p">)</span>
+        <span class="n">meta_raw_data</span> <span class="o">=</span> <span class="n">Meta</span><span class="o">.</span><span class="n">_load_raw_data</span><span class="p">(</span><span class="n">meta_load_path</span><span class="p">)</span>
+        <span class="n">param_group_pairs</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">get_param_group_pairs_from_dir</span><span class="p">(</span><span class="n">load_dir</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;meta&#39;</span><span class="p">:</span> <span class="n">meta_raw_data</span><span class="p">,</span>
+            <span class="s1">&#39;param_group_pairs&#39;</span><span class="p">:</span> <span class="n">param_group_pairs</span>
+        <span class="p">}</span></div>
+
+
+<div class="viewcode-block" id="Unit._create_obj_by_raw_data"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Unit._create_obj_by_raw_data">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_create_obj_by_raw_data</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">raw_data</span><span class="p">):</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">raw_data</span><span class="p">[</span><span class="s1">&#39;meta&#39;</span><span class="p">][</span><span class="s1">&#39;src_path&#39;</span><span class="p">],</span> <span class="n">raw_data</span><span class="p">[</span><span class="s1">&#39;meta&#39;</span><span class="p">][</span><span class="s1">&#39;src_name&#39;</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">raw_data</span><span class="p">[</span><span class="s1">&#39;param_group_pairs&#39;</span><span class="p">]:</span>
+            <span class="n">obj</span><span class="o">.</span><span class="n">set_param_group</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">with_check</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">obj</span></div>
+
+<div class="viewcode-block" id="Unit._check_before_save"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Unit._check_before_save">[docs]</a>    <span class="k">def</span> <span class="nf">_check_before_save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">save_path</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_check_before_save</span><span class="p">(</span><span class="n">save_path</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">check</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Unit._save"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Unit._save">[docs]</a>    <span class="k">def</span> <span class="nf">_save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">Path</span><span class="p">(</span><span class="n">save_dir</span><span class="p">)</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">save_dir</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">pairs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_param_group_pairs_from_dir</span><span class="p">(</span><span class="n">save_dir</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">pairs</span><span class="p">:</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">_save</span><span class="p">(</span><span class="n">Meta</span><span class="o">.</span><span class="n">get_path_by_dir</span><span class="p">(</span><span class="n">save_dir</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">param_group_map</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">group</span><span class="o">.</span><span class="n">_save</span><span class="p">(</span><span class="n">ParameterGroup</span><span class="o">.</span><span class="n">get_path_by_dir_and_name</span><span class="p">(</span><span class="n">save_dir</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="Unit.set_param_group"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Unit.set_param_group">[docs]</a>    <span class="k">def</span> <span class="nf">set_param_group</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">with_check</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="n">ParameterGroup</span><span class="p">):</span>
+            <span class="n">group</span> <span class="o">=</span> <span class="n">ParameterGroup</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">with_check</span><span class="p">:</span>
+            <span class="n">group</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">param_group_map</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">group</span></div>
+
+<div class="viewcode-block" id="Unit.set_param_group_from_disk"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Unit.set_param_group_from_disk">[docs]</a>    <span class="k">def</span> <span class="nf">set_param_group_from_disk</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">new_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="c1"># print(ParameterGroup._load_raw_data(path))</span>
+        <span class="n">group</span> <span class="o">=</span> <span class="n">ParameterGroup</span><span class="p">(</span><span class="n">ParameterGroup</span><span class="o">.</span><span class="n">_load_raw_data</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">new_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">new_name</span> <span class="o">=</span> <span class="n">ParameterGroup</span><span class="o">.</span><span class="n">get_name_from_path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="c1"># print(new_name)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_param_group</span><span class="p">(</span><span class="n">new_name</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">with_check</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Unit.rename_param_group"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Unit.rename_param_group">[docs]</a>    <span class="k">def</span> <span class="nf">rename_param_group</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">old_name</span><span class="p">,</span> <span class="n">new_name</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">new_name</span> <span class="ow">in</span> <span class="bp">self</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">overwrite</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">NameError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;New name for paramter group exists: </span><span class="si">{</span><span class="n">new_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">old_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">NameError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Old name for paramter group doesn&#39;t exists: </span><span class="si">{</span><span class="n">old_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">param_group_map</span><span class="p">[</span><span class="n">new_name</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">param_group_map</span><span class="p">[</span><span class="n">old_name</span><span class="p">]</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">param_group_map</span><span class="p">[</span><span class="n">old_name</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="Unit.run"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Unit.run">[docs]</a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group_name</span><span class="p">):</span>
+        <span class="n">group</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">param_group_map</span><span class="p">[</span><span class="n">group_name</span><span class="p">]</span>
+        <span class="n">group</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="n">group</span><span class="o">.</span><span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">check_src_obj</span><span class="p">()</span>
+        <span class="n">src_obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">src_obj</span>
+        <span class="k">return</span> <span class="n">src_obj</span><span class="p">(</span><span class="o">**</span><span class="n">params</span><span class="p">)</span> <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">params</span><span class="p">)</span> <span class="o">==</span> <span class="nb">dict</span> <span class="k">else</span> <span class="n">src_obj</span><span class="p">(</span><span class="o">*</span><span class="n">params</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Unit._get_param_group_map_dict"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Unit._get_param_group_map_dict">[docs]</a>    <span class="k">def</span> <span class="nf">_get_param_group_map_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">param_group_map</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">r</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">to_info_dict</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">r</span></div>
+
+<div class="viewcode-block" id="Unit.to_info_dict"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Unit.to_info_dict">[docs]</a>    <span class="k">def</span> <span class="nf">to_info_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The information `dict` for the source unit object</span>
+
+<span class="sd">        :example: </span>
+<span class="sd">        ```python</span>
+<span class="sd">            print(unit)</span>
+<span class="sd">        ```</span>
+<span class="sd">        ```{code-block} json</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;meta&quot;: {</span>
+<span class="sd">                &quot;src_path&quot;: &quot;test.py&quot;,</span>
+<span class="sd">                &quot;src_name&quot;: &quot;y&quot;,</span>
+<span class="sd">                &quot;load_path&quot;: null</span>
+<span class="sd">            },</span>
+<span class="sd">            &quot;meta_valid&quot;: true,</span>
+<span class="sd">            &quot;src_valid&quot;: false,</span>
+<span class="sd">            &quot;src_obj_info&quot;: null,</span>
+<span class="sd">            &quot;param_group_map&quot;: {</span>
+<span class="sd">                &quot;name1&quot;: {</span>
+<span class="sd">                    &quot;data&quot;: [1, 2],</span>
+<span class="sd">                    &quot;load_path&quot;: &quot;test/name1.param_group.json&quot;,</span>
+<span class="sd">                    &quot;valid&quot;: true</span>
+<span class="sd">                },</span>
+<span class="sd">                &quot;name2&quot;: {</span>
+<span class="sd">                    &quot;data&quot;: [10, 1],</span>
+<span class="sd">                    &quot;load_path&quot;: &quot;test/name3.param_group.json&quot;,</span>
+<span class="sd">                    &quot;valid&quot;: true</span>
+<span class="sd">                }</span>
+<span class="sd">            }</span>
+<span class="sd">        }</span>
+<span class="sd">        ```</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">src_obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">src_obj</span>
+        <span class="n">src_valid</span> <span class="o">=</span> <span class="n">src_obj</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;meta&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span>
+            <span class="s1">&#39;meta_valid&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">valid</span><span class="p">,</span>
+            <span class="s1">&#39;src_valid&#39;</span><span class="p">:</span> <span class="n">src_valid</span><span class="p">,</span>
+            <span class="s1">&#39;src_obj_info&#39;</span><span class="p">:</span> <span class="kc">None</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">src_valid</span> <span class="k">else</span> <span class="n">get_info_dict_from_callable</span><span class="p">(</span><span class="n">src_obj</span><span class="p">),</span>
+            <span class="s1">&#39;param_group_map&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_param_group_map_dict</span><span class="p">()</span>
+        <span class="p">}</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">src_obj_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">check_src_obj</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">get_info_dict_from_callable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">src_obj</span><span class="p">)</span>
+    
+    <span class="c1"># @property</span>
+    <span class="c1"># def summary(self):</span>
+    <span class="c1">#     new_meta = self.unit_info</span>
+    <span class="c1">#     new_meta[&#39;path&#39;] = self.src_path</span>
+    <span class="c1">#     return {</span>
+    <span class="c1">#         &#39;meta&#39;: self.unit_info,</span>
+    <span class="c1">#         &#39;param_group_map&#39;: self.param_group_map</span>
+    <span class="c1">#     }</span>
+<span class="c1"># &quot;&quot;&quot;Whether `group_name` `in` param_group_map of Unit</span>
+
+<span class="c1">#         Args:</span>
+<span class="c1">#             group_name (string): Target parameter group name</span>
+
+<span class="c1">#         Returns:</span>
+<span class="c1">#             ``bool``: Whether ``group_name`` ``in`` param_group_map of Unit</span>
+
+<span class="c1">#         Example:</span>
+<span class="c1">#             ``python</span>
+<span class="c1">#                 unit = Unit()</span>
+<span class="c1">#                 print(&#39;name1&#39; in unit)</span>
+<span class="c1">#             ``</span>
+<span class="c1">#         &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Unit.__contains__"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.components.html#unit_run.components.Unit.__contains__">[docs]</a>    <span class="k">def</span> <span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group_name</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Whether *group_name* `in` param_group_map of Unit</span>
+
+<span class="sd">        :param group_name: Target parameter group name</span>
+<span class="sd">        :return: Whether *group_name* `in` param_group_map of Unit</span>
+<span class="sd">        :Example:</span>
+<span class="sd">            ```python</span>
+<span class="sd">                unit = Unit(src_path, src_name)</span>
+<span class="sd">                print(&#39;name1&#39; in unit)</span>
+<span class="sd">            ```</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="k">return</span> <span class="n">group_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">param_group_map</span></div></div>
+
+
+<span class="c1"># unit_dir = &#39;D:/documents/AcademicDocuments/customed_python_pkgs/unit-run/examples/tests/test&#39;</span>
+<span class="c1"># unit = Unit.load_from_disk(unit_dir)</span>
+<span class="c1"># print(unit)</span>
+<span class="c1"># unit.save_to_disk(unit_dir)</span>
+<span class="c1"># print(unit.run(&#39;name3&#39;))</span>
+<span class="c1"># src_path = &#39;D:/documents/AcademicDocuments/customed_python_pkgs/unit-run/examples/tests/test.py&#39;</span>
+<span class="c1"># src_name = &#39;y&#39;</span>
+
+<span class="c1"># @auto_type_check</span>
+<span class="c1"># def func(a, b:int):</span>
+<span class="c1">#     pass</span>
+    <span class="c1"># print(inspect.getframeinfo(inspect.currentframe()))</span>
+
+<span class="c1"># func(1, &#39;fdaaa&#39;)</span>
+<span class="c1"># print(Path(&#39;test.param_group.json&#39;).stem)</span>
+<span class="c1"># unit = Unit(src_path, src_name)</span>
+<span class="c1"># param_path = &#39;D:/documents/AcademicDocuments/customed_python_pkgs/unit-run/examples/tests/manual_p_group1.json&#39;</span>
+<span class="c1"># unit.set_param_group_from_disk(param_path)</span>
+<span class="c1"># unit.rename_param_group(&#39;manual_p_group1&#39;, &#39;example_1&#39;)</span>
+<span class="c1"># print(unit)</span>
+<span class="c1"># unit.save_to_disk(Path(src_path).parent.joinpath(&#39;test&#39;).resolve())</span>
+<span class="c1"># print(unit.src_path, unit.src_name)</span>
+<span class="c1"># unit_dir = &#39;D:/documents/AcademicDocuments/customed_python_pkgs/unit-run/tests/test.jioni.fda&#39;</span>
+<span class="c1"># meta = Meta(&#39;steswt&#39;, &#39;tes&#39;)</span>
+<span class="c1"># print(Path(unit_dir).stem)</span>
+<span class="c1"># print(Meta.check == meta.check_valid)</span>
+<span class="c1"># os.path.join(load_dir, &#39;*.param_group.json&#39;)</span>
+<span class="c1"># print(list(Path(unit_dir).glob(&#39;*.param_group.json&#39;)))</span>
+<span class="c1"># unit.check()</span>
+<span class="c1"># print(unit.src_path)</span>
+<span class="c1"># print(dir(Meta))</span>
+<span class="c1"># meta = Meta(&#39;test.py&#39;, &#39;y&#39;)</span>
+<span class="c1"># print(meta.to_dict())</span>
+
+<span class="c1"># p = Path(&#39;D:/documents/AcademicDocuments/customed_python_pkgs/unit-run/unit_run/dfafa/tils.py&#39;)</span>
+<span class="c1"># print(list(p.parents))</span>
+<span class="c1"># print(p)</span>
+<span class="c1"># p2 = Path(&#39;D:/documents/AcademicDocuments/customed_python_pkgs/unit-run/tests&#39;)</span>
+<span class="c1"># print(p2.exists())</span>
+<span class="c1"># print(p. == p2.resolve())</span>
+
+<span class="c1"># x = [1,2,3]</span>
+<span class="c1"># print(len(list(filter(lambda a: a&gt;1, x))))</span>
+</pre></div>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Lingfei He
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

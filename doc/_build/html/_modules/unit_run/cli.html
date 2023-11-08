@@ -1,0 +1,598 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>unit_run.cli &#8212; unit-run</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/all.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/unit_run/cli';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">unit-run</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Lingfei-He/unit-run" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/unit-run/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Lingfei-He/unit-run/issues" title="Forum" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-solid fa-comments fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Forum</span></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../installation/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation/package_installation.html">Package Installation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../user_guide/CLI_Tool/index.html">CLI Tool</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../user_guide/CLI_Tool/once.html">One-time unit running</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_guide/CLI_Tool/store.html">Create a stored <code class="docutils literal notranslate"><span class="pre">Unit</span></code> for the following runs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_guide/CLI_Tool/run.html">Run a stored <code class="docutils literal notranslate"><span class="pre">Unit</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_guide/CLI_Tool/view.html">Inspect or view <code class="docutils literal notranslate"><span class="pre">Unit</span></code> information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_guide/CLI_Tool/set.html">Set named parameter groups for a stored <code class="docutils literal notranslate"><span class="pre">Unit</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user_guide/CLI_Tool/del.html">Delete named parameter groups or the entire <code class="docutils literal notranslate"><span class="pre">Unit</span></code> for a stored Unit</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">APIs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../apidocs/unit_run/unit_run.cli.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unit_run.cli</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidocs/unit_run/unit_run.components.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unit_run.components</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidocs/unit_run/unit_run.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">unit_run.utils</span></code></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for unit_run.cli</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">argparse</span><span class="o">,</span> <span class="nn">json</span><span class="o">,</span> <span class="nn">shutil</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">perf_counter</span>
+<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="vm">__file__</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)))</span>
+<span class="kn">from</span> <span class="nn">components</span> <span class="kn">import</span> <span class="n">Unit</span>
+<span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="n">load_json</span>
+
+<div class="viewcode-block" id="set_file_pairs"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.cli.html#unit_run.cli.set_file_pairs">[docs]</a><span class="k">def</span> <span class="nf">set_file_pairs</span><span class="p">(</span><span class="n">unit</span><span class="p">,</span> <span class="n">pairs</span><span class="p">,</span> <span class="n">force_overwrite</span><span class="p">,</span> <span class="n">quiet</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">pairs</span><span class="p">)</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pairs</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">):</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">pairs</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">pairs</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">set_parameter_pairs</span><span class="p">(</span><span class="n">unit</span><span class="p">,</span> <span class="n">pairs</span><span class="p">,</span> <span class="n">force_overwrite</span><span class="p">,</span> <span class="n">quiet</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="set_parameter_pairs"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.cli.html#unit_run.cli.set_parameter_pairs">[docs]</a><span class="k">def</span> <span class="nf">set_parameter_pairs</span><span class="p">(</span><span class="n">unit</span><span class="p">,</span> <span class="n">pairs</span><span class="p">,</span> <span class="n">force_overwrite</span><span class="p">,</span> <span class="n">quiet</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">pairs</span><span class="p">)</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pairs</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">):</span>
+        <span class="n">k</span><span class="p">,</span> <span class="n">param_group</span> <span class="o">=</span> <span class="n">pairs</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="p">],</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">pairs</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">force_overwrite</span> <span class="ow">and</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">unit</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">NameError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The parameter group &#39;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&#39; has already existed, please use &#39;-F&#39; or &#39;--force-overwrite&#39; to overwrite.&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">quiet</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">force_overwrite</span> <span class="ow">and</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">unit</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Parameter group &#39;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&#39; overwrote.&quot;</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;New parameter group &#39;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&#39; added.&quot;</span><span class="p">)</span>
+            <span class="n">unit</span><span class="o">.</span><span class="n">set_param_group</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">param_group</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="run"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.cli.html#unit_run.cli.run">[docs]</a><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">unit</span><span class="p">,</span> <span class="n">pname</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">name</span><span class="p">,</span> <span class="n">path</span> <span class="o">=</span> <span class="n">unit</span><span class="o">.</span><span class="n">src_name</span><span class="p">,</span> <span class="n">unit</span><span class="o">.</span><span class="n">src_path</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">quiet</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Running the target unit &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; from </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
+        <span class="n">start_t</span> <span class="o">=</span> <span class="n">perf_counter</span><span class="p">()</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">unit</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">pname</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Running complete, time consuming: </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">perf_counter</span><span class="p">()</span><span class="o">-</span><span class="n">start_t</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s1"> s.</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="o">*</span><span class="mi">10</span> <span class="o">+</span> <span class="s1">&#39;Running Result&#39;</span> <span class="o">+</span> <span class="s1">&#39;*&#39;</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="o">*</span><span class="mi">10</span> <span class="o">+</span> <span class="s1">&#39;Running Result&#39;</span> <span class="o">+</span> <span class="s1">&#39;*&#39;</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">unit</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">pname</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="build_sub_once_parser"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.cli.html#unit_run.cli.build_sub_once_parser">[docs]</a><span class="k">def</span> <span class="nf">build_sub_once_parser</span><span class="p">(</span><span class="n">parsers</span><span class="p">):</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">parsers</span><span class="o">.</span><span class="n">add_parser</span><span class="p">(</span><span class="s1">&#39;once&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Perform a unit running without any information storage.&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;upath&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The file path where the unit is located.&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;uname&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The name of the target unit.&#39;</span><span class="p">)</span>
+    <span class="n">group</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_mutually_exclusive_group</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-j&#39;</span><span class="p">,</span> <span class="s1">&#39;--json-str&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The JSON str that will be parsed as a parameter group for the target unit.&#39;</span><span class="p">)</span>
+    <span class="n">group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-f&#39;</span><span class="p">,</span> <span class="s1">&#39;--file&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The path of JSON file whose content will be parsed as a parameter group for the target unit.&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+        <span class="n">unit</span> <span class="o">=</span> <span class="n">Unit</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">upath</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">uname</span><span class="p">)</span>
+        <span class="n">group</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">json_str</span><span class="p">)</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">json_str</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">load_json</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">file</span><span class="p">)</span>
+        <span class="n">unit</span><span class="o">.</span><span class="n">set_param_group</span><span class="p">(</span><span class="s1">&#39;Unnamed&#39;</span><span class="p">,</span> <span class="n">group</span><span class="p">)</span>
+        <span class="n">run</span><span class="p">(</span><span class="n">unit</span><span class="p">,</span> <span class="s1">&#39;Unnamed&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">quiet</span><span class="p">)</span>
+
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">set_defaults</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="n">func</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="build_sub_create_parser"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.cli.html#unit_run.cli.build_sub_create_parser">[docs]</a><span class="k">def</span> <span class="nf">build_sub_create_parser</span><span class="p">(</span><span class="n">parsers</span><span class="p">):</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">parsers</span><span class="o">.</span><span class="n">add_parser</span><span class="p">(</span><span class="s1">&#39;create&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Create Unit object with storage.&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;upath&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The file path where the unit is located.&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;uname&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The name of the target unit.&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;save_dir&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The directory to save the unit infomation.&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-j&#39;</span><span class="p">,</span> <span class="s1">&#39;--json-str-pairs&#39;</span><span class="p">,</span> 
+                                   <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span>
+                                   <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Key-value parameters groups to initiate the unit. </span><span class="se">\n</span><span class="s1">Example: -g name1 &quot;[1, 2]&quot; name2 &quot;{</span><span class="se">\&#39;</span><span class="s1">a</span><span class="se">\&#39;</span><span class="s1">: 1, </span><span class="se">\&#39;</span><span class="s1">b</span><span class="se">\&#39;</span><span class="s1">: 2}&quot;&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-f&#39;</span><span class="p">,</span> <span class="s1">&#39;--file-pairs&#39;</span><span class="p">,</span> 
+                                   <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span>
+                                   <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Key-json_path parameters groups to initiate the unit. </span><span class="se">\n</span><span class="s1">Example: --file-pairs tests/name1 manual_p_group1.json name2 tests/manual_p_group2.json&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+        <span class="c1"># print(args)</span>
+        <span class="n">unit</span> <span class="o">=</span> <span class="n">Unit</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">upath</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">uname</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">json_str_pairs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">set_parameter_pairs</span><span class="p">(</span><span class="n">unit</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">json_str_pairs</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">file_pairs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">set_file_pairs</span><span class="p">(</span><span class="n">unit</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">file_pairs</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="n">unit</span><span class="o">.</span><span class="n">save_to_disk</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">save_dir</span><span class="p">)</span>
+        <span class="c1"># print(args.save_dir)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">set_defaults</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="n">func</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="build_sub_run_parser"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.cli.html#unit_run.cli.build_sub_run_parser">[docs]</a><span class="k">def</span> <span class="nf">build_sub_run_parser</span><span class="p">(</span><span class="n">parsers</span><span class="p">):</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">parsers</span><span class="o">.</span><span class="n">add_parser</span><span class="p">(</span><span class="s1">&#39;run&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Perform a running from a stored Unit.&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;load_dir&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The directory to load the unit infomation.&quot;</span><span class="p">)</span>
+    <span class="n">group</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_mutually_exclusive_group</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-g&#39;</span><span class="p">,</span> <span class="s1">&#39;--group-name&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The name of parameter group.&quot;</span><span class="p">)</span>
+    <span class="n">group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-j&#39;</span><span class="p">,</span> <span class="s1">&#39;--json-str&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Json-string-like parameters to perform a unit run.&quot;</span><span class="p">)</span>
+    <span class="n">group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-f&#39;</span><span class="p">,</span> <span class="s1">&#39;--file&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Json file whose content will be transformed into parameters to perform a unit run.&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+        <span class="c1"># print(args)</span>
+        <span class="n">unit</span> <span class="o">=</span> <span class="n">Unit</span><span class="o">.</span><span class="n">load_from_disk</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">load_dir</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">group_name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">group_name</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">group_name</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">group_name</span> <span class="o">=</span> <span class="s1">&#39;Unnamed&#39;</span>
+            <span class="n">group</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">json_str</span><span class="p">)</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">json_str</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">load_json</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">file</span><span class="p">)</span>
+            <span class="n">unit</span><span class="o">.</span><span class="n">set_param_group</span><span class="p">(</span><span class="n">group_name</span><span class="p">,</span> <span class="n">group</span><span class="p">)</span>
+        <span class="n">run</span><span class="p">(</span><span class="n">unit</span><span class="p">,</span> <span class="n">group_name</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">quiet</span><span class="p">)</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">set_defaults</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="n">func</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="build_sub_view_parser"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.cli.html#unit_run.cli.build_sub_view_parser">[docs]</a><span class="k">def</span> <span class="nf">build_sub_view_parser</span><span class="p">(</span><span class="n">parsers</span><span class="p">):</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">parsers</span><span class="o">.</span><span class="n">add_parser</span><span class="p">(</span><span class="s1">&#39;view&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;List information about the target unit.&#39;</span><span class="p">)</span>
+    <span class="n">group</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_mutually_exclusive_group</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--dir&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Unit directory path to print information.&quot;</span><span class="p">)</span>
+    <span class="n">group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--raw&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Print information by a raw unit file.&quot;</span><span class="p">)</span>
+
+    
+    <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">dir</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">unit</span> <span class="o">=</span> <span class="n">Unit</span><span class="o">.</span><span class="n">load_from_disk</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">dir</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">dir</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">summary</span> <span class="o">=</span> <span class="n">unit</span><span class="o">.</span><span class="n">to_info_dict</span><span class="p">()</span>
+                <span class="n">info</span> <span class="o">=</span> <span class="n">summary</span><span class="p">[</span><span class="s1">&#39;meta&#39;</span><span class="p">]</span>
+                <span class="n">info</span><span class="p">[</span><span class="s1">&#39;param_group_names&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">summary</span><span class="p">[</span><span class="s1">&#39;param_group_map&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">group_name</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">dir</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">unit</span><span class="o">.</span><span class="n">param_group_map</span><span class="p">[</span><span class="n">group_name</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">unit</span> <span class="o">=</span> <span class="n">Unit</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">raw</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">args</span><span class="o">.</span><span class="n">raw</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">unit</span><span class="o">.</span><span class="n">src_obj_info</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+        <span class="c1"># set_parameter_pairs(unit, args.json_str_pairs, args.force_overwrite, args.quiet)</span>
+        <span class="c1"># set_file_pairs(unit, args.file_pairs, args.force_overwrite, args.quiet)</span>
+        <span class="c1"># unit.save(args.load_dir, verbose=False)</span>
+        
+    <span class="n">parser</span><span class="o">.</span><span class="n">set_defaults</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="n">func</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="build_sub_set_parser"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.cli.html#unit_run.cli.build_sub_set_parser">[docs]</a><span class="k">def</span> <span class="nf">build_sub_set_parser</span><span class="p">(</span><span class="n">parsers</span><span class="p">):</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">parsers</span><span class="o">.</span><span class="n">add_parser</span><span class="p">(</span><span class="s1">&#39;set&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Set named parameter groups for a stored Unit.&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;load_dir&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The directory to load the unit infomation.&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-F&#39;</span><span class="p">,</span> <span class="s1">&#39;--force-overwrite&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Whether to overwrite existing parameter group.&#39;</span><span class="p">)</span>
+    <span class="n">group</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_mutually_exclusive_group</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--rename&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;(old_name, new_name) Set a new parameter group from a old group.&quot;</span><span class="p">)</span>
+    <span class="n">group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-j&#39;</span><span class="p">,</span> <span class="s1">&#39;--json-str-pairs&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Key-value parameters groups to initiate the unit. </span><span class="se">\n</span><span class="s1">Example: -g name1 &quot;[1, 2]&quot; name2 &quot;{</span><span class="se">\&#39;</span><span class="s1">a</span><span class="se">\&#39;</span><span class="s1">: 1, </span><span class="se">\&#39;</span><span class="s1">b</span><span class="se">\&#39;</span><span class="s1">: 2}&quot;&#39;</span><span class="p">)</span>
+    <span class="n">group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-f&#39;</span><span class="p">,</span> <span class="s1">&#39;--file-pairs&#39;</span><span class="p">,</span> 
+                                   <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span>
+                                   <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Key-json_path parameters groups to initiate the unit. </span><span class="se">\n</span><span class="s1">Example: --file-pairs tests/name1 manual_p_group1.json name2 tests/manual_p_group2.json&#39;</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+        <span class="c1"># print(args)</span>
+        <span class="n">unit</span> <span class="o">=</span> <span class="n">Unit</span><span class="o">.</span><span class="n">load_from_disk</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">load_dir</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">rename</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">rename</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The number of names to rename should be 2 (old name and new name), not </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">rename</span><span class="p">)</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">old_name</span><span class="p">,</span> <span class="n">new_name</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">rename</span>
+                <span class="n">unit</span><span class="o">.</span><span class="n">rename_param_group</span><span class="p">(</span><span class="n">old_name</span><span class="p">,</span> <span class="n">new_name</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">force_overwrite</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">args</span><span class="o">.</span><span class="n">json_str_pairs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">json_str_pairs</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The number of pairs should be even, not odd: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">json_str_pairs</span><span class="p">)</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+            <span class="n">set_parameter_pairs</span><span class="p">(</span><span class="n">unit</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">json_str_pairs</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">force_overwrite</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">quiet</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">args</span><span class="o">.</span><span class="n">file_pairs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">file_pairs</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The number of pairs should be even, not odd: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">file_pairs</span><span class="p">)</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+            <span class="n">set_file_pairs</span><span class="p">(</span><span class="n">unit</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">file_pairs</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">force_overwrite</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">quiet</span><span class="p">)</span>
+        <span class="n">unit</span><span class="o">.</span><span class="n">save_to_disk</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">load_dir</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="o">.</span><span class="n">quiet</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Parameter group set completely.&#39;</span><span class="p">)</span>
+        
+    <span class="n">parser</span><span class="o">.</span><span class="n">set_defaults</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="n">func</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="build_sub_del_parser"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.cli.html#unit_run.cli.build_sub_del_parser">[docs]</a><span class="k">def</span> <span class="nf">build_sub_del_parser</span><span class="p">(</span><span class="n">parsers</span><span class="p">):</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">parsers</span><span class="o">.</span><span class="n">add_parser</span><span class="p">(</span><span class="s1">&#39;del&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Delete named parameter groups or entire Unit for a stored Unit.&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;load_dir&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The directory to load the unit infomation, delete the entire Unit direcotry when group_names is empty.&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;group_names&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="p">[],</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The names of parameter groups to be deleted. Example: del tests/test name1 name2 name3&#39;</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+        <span class="n">group_names</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">group_names</span>
+        <span class="n">unit</span> <span class="o">=</span> <span class="n">Unit</span><span class="o">.</span><span class="n">load_from_disk</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">load_dir</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">group_names</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">load_dir</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="o">.</span><span class="n">quiet</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The entire unit &#39;</span><span class="si">{</span><span class="n">unit</span><span class="o">.</span><span class="n">src_name</span><span class="si">}</span><span class="s2">&#39; was deleted.&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">group_names</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">group_names</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;*&#39;</span><span class="p">:</span>
+            <span class="n">unit</span><span class="o">.</span><span class="n">param_group_map</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+            <span class="n">unit</span><span class="o">.</span><span class="n">save_to_disk</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">load_dir</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="o">.</span><span class="n">quiet</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The parameters groups of unit &#39;</span><span class="si">{</span><span class="n">unit</span><span class="o">.</span><span class="n">src_name</span><span class="si">}</span><span class="s2">&#39; cleared.&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">group_names</span><span class="p">:</span>
+                <span class="k">del</span> <span class="n">unit</span><span class="o">.</span><span class="n">param_group_map</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+            <span class="n">unit</span><span class="o">.</span><span class="n">save_to_disk</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">load_dir</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="o">.</span><span class="n">quiet</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Deleted </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">group_names</span><span class="p">)</span><span class="si">}</span><span class="s2"> parameter group</span><span class="si">{</span><span class="s1">&#39;s&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="n">group_names</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="si">}</span><span class="s2"> of the unit &#39;</span><span class="si">{</span><span class="n">unit</span><span class="o">.</span><span class="n">src_name</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">)</span>
+        <span class="c1"># unit = Unit.load_from_disk(args.load_dir, verbose=not args.quiet)</span>
+        <span class="c1"># set_parameter_pairs(unit, args.json_str_pairs, args.force_overwrite, args.quiet)</span>
+        <span class="c1"># set_file_pairs(unit, args.file_pairs, args.force_overwrite, args.quiet)</span>
+        <span class="c1"># unit.save(args.load_dir, verbose=False)</span>
+        
+    <span class="n">parser</span><span class="o">.</span><span class="n">set_defaults</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="n">func</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="main"><a class="viewcode-back" href="../../apidocs/unit_run/unit_run.cli.html#unit_run.cli.main">[docs]</a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;CLI for simple unit running.&#39;</span><span class="p">,</span> <span class="n">prog</span><span class="o">=</span><span class="s1">&#39;unit_run&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-q&#39;</span><span class="p">,</span> <span class="s1">&#39;--quiet&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Whether to hide the log during running (including reuslt print).&#39;</span><span class="p">)</span>
+    
+
+    <span class="n">sub_parsers</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_subparsers</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;subcommands&#39;</span><span class="p">)</span>
+    <span class="n">build_sub_once_parser</span><span class="p">(</span><span class="n">sub_parsers</span><span class="p">)</span>
+    <span class="n">build_sub_create_parser</span><span class="p">(</span><span class="n">sub_parsers</span><span class="p">)</span>
+    <span class="n">build_sub_run_parser</span><span class="p">(</span><span class="n">sub_parsers</span><span class="p">)</span>
+    <span class="n">build_sub_view_parser</span><span class="p">(</span><span class="n">sub_parsers</span><span class="p">)</span>
+    <span class="n">build_sub_set_parser</span><span class="p">(</span><span class="n">sub_parsers</span><span class="p">)</span>
+    <span class="n">build_sub_del_parser</span><span class="p">(</span><span class="n">sub_parsers</span><span class="p">)</span>
+
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+    <span class="n">args</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">)</span></div>
+
+    
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Lingfei He
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

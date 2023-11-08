@@ -1,0 +1,12 @@
+section>h2 {
+    font-size: larger;
+    font-weight: bold;
+}
+
+.bd-main{
+    flex-grow: 1;
+}
+
+span.caption-number{
+    display: none;
+}

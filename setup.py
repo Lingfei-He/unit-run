@@ -8,11 +8,11 @@ setup(
     url='https://github.com/Lingfei-He/unit-run',
     author='Lingfei He',
     author_email='lingfei@tju.edu.cn',
-    license='MIT',
     entry_points={
         'console_scripts':[
             'unit-run = unit_run.cli:main'
         ]
     },
-    packages=find_packages(),
+    package_dir={'':'src'},
+    packages=find_packages('src'),
     zip_safe=False)
