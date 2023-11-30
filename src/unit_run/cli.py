@@ -2,8 +2,8 @@ import argparse, json, shutil
 from time import perf_counter
 import os, sys
 sys.path.append(os.path.abspath(os.path.join(__file__, '')))
-from components import Unit
-from utils import load_json
+from unit_run.components import Unit
+from unit_run.utils import load_json
 
 def set_file_pairs(unit, pairs, force_overwrite, quiet):
     assert len(pairs)%2 == 0

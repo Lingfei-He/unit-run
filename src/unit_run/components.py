@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod, abstractclassmethod
 from pathlib import Path
 import os, sys
 sys.path.append(os.path.abspath(os.path.join(__file__, '..')))
-from utils import PathType, save_as_json, load_json, auto_type_check, get_info_dict_from_callable, find_callable_by_name
+from unit_run.utils import PathType, save_as_json, load_json, auto_type_check, get_info_dict_from_callable, find_callable_by_name
 import shutil, os, json
 
 class Base(ABC):
@@ -340,7 +340,10 @@ class Unit(Base):
     
     @property
     def src_obj(self):
-        return find_callable_by_name(str(Path(self.meta.src_path).resolve()), self.meta.src_name)
+        try:
+            return find_callable_by_name(str(Path(self.meta.src_path).resolve()), self.meta.src_name)
+        except:
+            return None
     
     @classmethod
     def _check_path_to_load(cls, load_path):

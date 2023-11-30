@@ -53,9 +53,9 @@ def get_info_dict_from_callable(c):
     """
     info = {
         'name': c.__name__,
-        'paramters': []
+        'parameters': []
     }
-    # Add parameters to the info paramters.
+    # Add parameters to the info parameters.
     for p in inspect.signature(c).parameters.values():
         item = {
             'name': p.name,
@@ -65,7 +65,7 @@ def get_info_dict_from_callable(c):
         # Set default value of item
         if p.default is not p.empty:
             item['default'] = p.default
-        info['paramters'].append(item)
+        info['parameters'].append(item)
     return info
 
 def inspect_callable_infos_by_path(path):
