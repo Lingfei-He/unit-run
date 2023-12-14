@@ -327,8 +327,11 @@ class Unit(Base):
     def check_src_obj(self):
         if not Path(self.meta.src_path).exists():
             raise FileNotFoundError(f'Source not found: {self.meta.src_path}')
-        if self.src_obj is None:
+        src_obj = find_callable_by_name(str(Path(self.meta.src_path).resolve()), self.meta.src_name)
+        if src_obj is None:
             raise LookupError(f"Cannot find the unit source '{self.meta.src_name}' from '{self.meta.src_path}'")
+        else:
+            return src_obj
     
     @property
     def src_obj_valid(self):
@@ -337,11 +340,11 @@ class Unit(Base):
             return True
         except:
             return False
-    
+
     @property
     def src_obj(self):
         try:
-            return find_callable_by_name(str(Path(self.meta.src_path).resolve()), self.meta.src_name)
+            return self.check_src_obj()
         except:
             return None
     
@@ -435,7 +438,7 @@ class Unit(Base):
             r[k] = v.to_info_dict()
         return r
 
-    def to_info_dict(self):
+    def to_info_dict(self, return_trace=False):
         """The information `dict` for the source unit object
 
         :example: 
@@ -467,13 +470,26 @@ class Unit(Base):
         }
         ```
         """
-        src_obj = self.src_obj
-        src_valid = src_obj is not None
+        src_obj = None
+        try:
+            src_obj = self.check_src_obj()
+            src_valid = True
+            src_obj_info = get_info_dict_from_callable(src_obj)
+        except:
+            src_valid = False
+            if return_trace:
+                import traceback
+                 # 获取完整的Traceback
+                # exc_type, exc_value, exc_traceback = sys.exc_info()
+                src_obj_info = traceback.format_exc()
+            else:
+                src_obj_info = None
+
         return {
             'meta': self.meta.to_dict(),
             'meta_valid': self.meta.valid,
             'src_valid': src_valid,
-            'src_obj_info': None if not src_valid else get_info_dict_from_callable(src_obj),
+            'src_obj_info': src_obj_info,
             'param_group_map': self._get_param_group_map_dict()
         }
 

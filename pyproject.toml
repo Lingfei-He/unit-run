@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "unit-run"
-version = "0.0.7"
+version = "0.0.8"
 authors = [
   { name="Lingfei He", email="lingfei@tju.edu.cn" },
 ]
@@ -16,6 +16,9 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+
+[project.scripts]
+"unit-run" = "unit_run.cli:main"
 
 [project.urls]
 "Homepage" = "https://github.com/Lingfei-He/unit-run"
